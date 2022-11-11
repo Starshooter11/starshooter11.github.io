@@ -1,7 +1,7 @@
 ﻿
 namespace Texttomeh2
 {
-    partial class Form2
+    partial class Character
     {
         /// <summary>
         /// Required designer variable.

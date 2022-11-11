@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Texttomeh2
 {
-    public partial class Form4 : Form
+    public partial class Plot : Form
     {
-        public Form4()
+        public Plot()
         {
             InitializeComponent();
             this.IsMdiContainer = true;

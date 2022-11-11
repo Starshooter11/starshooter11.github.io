@@ -1,7 +1,7 @@
 ﻿
 namespace Texttomeh2
 {
-    partial class Form3 
+    partial class OptionPage 
     {
         /// <summary>
         /// Required designer variable.

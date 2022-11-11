@@ -7,21 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Texttomeh2.Events;
 
 namespace Texttomeh2
 {
-    public partial class Form2 : Form  // character form
+    public partial class Character : Form  // character form
     {
         private int numXLabel = 315;
         private int numYLabel = 79;
         private int numXTB = 438;
         private int numYTB = 79;
-        private int labelCount = 0;
-        private int TBCount = 0;
+        private int addCount = 0;
 
         private int CloseCount = 0;
+
+        public List<Form> novels;
         public string Message { get { return "true"; } }
-        public Form2()
+        public Character()
         {
             InitializeComponent();
             this.Visible = true;
@@ -91,21 +93,13 @@ namespace Texttomeh2
             this.Controls.Add(myLB);
             myLB.BringToFront();
             numYLabel += 20 + 6;
-            labelCount += 1;
+            addCount += 1;
             
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            if (CloseCount == 0)
-            {
-                //currently working on inter-form communication
-                
-                 Form1.UpdateFormChar(this);
-                
-            }
-
+            
 
         }
 
@@ -114,7 +108,13 @@ namespace Texttomeh2
 
         private void button4_Click(object sender, EventArgs e)
         {
+            UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
+
+            //Event declared above
+            UpdateNovels(this, args);
             this.Close();
+
+
         }
         
 

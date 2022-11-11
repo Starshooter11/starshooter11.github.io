@@ -1,7 +1,7 @@
 ﻿
 namespace Texttomeh2
 {
-    partial class Form4
+    partial class Plot
     {
         /// <summary>
         /// Required designer variable.

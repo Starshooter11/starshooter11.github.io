@@ -10,18 +10,20 @@ using System.Windows.Forms;
 
 namespace Texttomeh2
 {
-    public partial class Form2 : Form
+    public partial class Form2 : Form  // character form
     {
         private int numXLabel = 315;
         private int numYLabel = 79;
-        private int numXTB = 431;
+        private int numXTB = 438;
         private int numYTB = 79;
+        private int labelCount = 0;
+        private int TBCount = 0;
 
         private int CloseCount = 0;
+        public string Message { get { return "true"; } }
         public Form2()
         {
             InitializeComponent();
-            this.IsMdiContainer = true;
             this.Visible = true;
         }
 
@@ -30,49 +32,67 @@ namespace Texttomeh2
    
         }
 
-        //currently fixing
-        //private void CreateTextBoxDelegate(object sender, EventArgs e)
-        //{
-        //    TextBox newTB = new TextBox();
-        //    this.Controls.Add(newTB);
-        //    newTB.Text = "Created Button";
-        //    newTB.Location = new Point(600, 300);
-        //    newTB.Size = new Size(50, 100);
-        //}
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //currently fixing
-            //TextBox newTB = new TextBox();
-            //this.Controls.Add(newTB);
-            //newTB.Text = "Created TB";
-            //newTB.Location = new Point(700, 300);
-            //newTB.Size = new Size(50, 100);
-            ////newTB.Visible = true;
+
             /* Start of Math
              * 
              * 309 70, label is +6+9 for 1st
+             * +9 for 1st TB
              * 
-             * +122+9 for 1st TB
-             * 
-             * 110, 20 for labels
-             * 128, 20 for TB
+             * 110, 20 for labels, MS san 12
+             * 128, 20 for TB, ms san 8.25
              * +6 between stuff
+             * -40 from box edge(TB)
+             * +6 from box edge(labels)
+             * 
+             * box size is 297
+             * location is 309 70
+             * 606 -> 566
+             * 566 - 128 = 438(TB start), 79
+             * 
+             * 309 + 6 = 315(LB start), 79
+             * 
+             * every iteration adds tb/lb size + 6 for Y ONLY
              */
+            if (TBCount >= 7)
+            {
+                MessageBox.Show("Too many TBs!");
+            }
+            else
+            {
+                TextBox myTB = new TextBox();
+                myTB.Location = new Point(numXTB, numYTB);
+                myTB.Size = new Size(128, 20);
+                myTB.Name = "progCreTB";
+                myTB.Font = new Font("MS Sans Serif", 8.25f);
+
+                // Adding TB to form
+                this.Controls.Add(myTB);
+                myTB.BringToFront();
+                numYTB += 20 + 6;
+                TBCount += 1;
+            }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            TextBox myLB = new TextBox();
+            myLB.Location = new Point(numXLabel, numYLabel);
+            myLB.Size = new Size(110, 20);
+            myLB.Name = "progCreLB";
+            myLB.Font = new Font("MS Sans Serif", 12f);
+            myLB.BackColor = Color.FromKnownColor(System.Drawing.KnownColor.GradientInactiveCaption);
+            myLB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+            // Adding TB to form
+            this.Controls.Add(myLB);
+            myLB.BringToFront();
+            numYLabel += 20 + 6;
+            labelCount += 1;
             
-
-            TextBox myTB = new TextBox();
-            myTB.Location = new Point(numXTB, numYTB);
-            myTB.Text = "Submit";
-            myTB.Size = new Size(128, 20);
-            myTB.BackColor = Color.LightBlue;
-            myTB.Padding = new Padding(6);
-            myTB.Name = "First_button";
-
-            // Adding this button to form
-            this.Controls.Add(myTB);
-            myTB.BringToFront();
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -80,22 +100,27 @@ namespace Texttomeh2
             this.Visible = false;
             if (CloseCount == 0)
             {
-               
+                //currently working on inter-form communication
+                
+                 Form1.UpdateFormChar(this);
+                
             }
 
 
         }
 
+
+        
+
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
+        
     }
 
 

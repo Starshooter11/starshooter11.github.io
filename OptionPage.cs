@@ -35,11 +35,13 @@ namespace Texttomeh2
 
             //temporary for testing, will be changed to a list for chars later
             charForm.novels = this.novels;
+            charForm.UpdateNovels += new Character.NovelsHandler(UpdateNovels);
 
             this.Close();
 
             
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {

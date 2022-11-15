@@ -21,8 +21,17 @@ namespace Texttomeh2
 
         private int CloseCount = 0;
 
+        public string charName = "";
+
         public List<Form> novels;
-        public string Message { get { return "true"; } }
+
+        public delegate void NovelsHandler(object sender, UpdateNovelsEventsArgs e);
+
+        //Event for Delegate 
+        //Type NovelsHandler matches the Delegate above
+        //UpdateNovels is the variable used by Homepage form
+        public event NovelsHandler UpdateNovels;
+
         public Character()
         {
             InitializeComponent();
@@ -58,7 +67,7 @@ namespace Texttomeh2
              * 
              * every iteration adds tb/lb size + 6 for Y ONLY
              */
-            if (TBCount >= 7)
+            if (addCount >= 7)
             {
                 MessageBox.Show("Too many TBs!");
             }
@@ -74,7 +83,7 @@ namespace Texttomeh2
                 this.Controls.Add(myTB);
                 myTB.BringToFront();
                 numYTB += 20 + 6;
-                TBCount += 1;
+                addCount += 1;
             }
 
         }
@@ -109,18 +118,18 @@ namespace Texttomeh2
         private void button4_Click(object sender, EventArgs e)
         {
             UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
-
+            novels.Add(this);
             //Event declared above
             UpdateNovels(this, args);
             this.Close();
 
 
         }
-        
 
-
-
-        
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 
 

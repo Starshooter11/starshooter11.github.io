@@ -33,8 +33,8 @@ namespace Texttomeh2
 
             optionForm.UpdateNovels += new OptionPage.NovelsHandler(novelsUpdate);
 
-            //Display Form2
-            optionForm.ShowDialog();
+         
+
 
 
         }
@@ -42,6 +42,12 @@ namespace Texttomeh2
         private void novelsUpdate(object s, UpdateNovelsEventsArgs e)
         {
             novels = e.GetNovels;
+            String novelsString = "";
+            for ( int i = 0; i < novels.Count; i++)
+            {
+                novelsString = novelsString + "; ";
+            }
+            MessageBox.Show(novelsString);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -63,7 +69,7 @@ namespace Texttomeh2
         private void charB_Click(object sender, EventArgs e)
         {
             int nestedPointer = pointer;
-            meh[pointer].Visible = true;
+            novels[pointer].Visible = true;
 
         }
 

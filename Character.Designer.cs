@@ -251,6 +251,7 @@ namespace Texttomeh2
             this.textBox1.Size = new System.Drawing.Size(587, 38);
             this.textBox1.TabIndex = 37;
             this.textBox1.Text = "Name";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button2
             // 
@@ -373,7 +374,7 @@ namespace Texttomeh2
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // Form2
+            // Character
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -411,7 +412,7 @@ namespace Texttomeh2
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Form2";
+            this.Name = "Character";
             this.Text = "Character";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

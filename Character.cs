@@ -108,7 +108,11 @@ namespace Texttomeh2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
+            novels.Add(this);
+            //Event declared above
+            UpdateNovels(this, args);
+            this.Visible = false;
 
         }
 
@@ -117,10 +121,7 @@ namespace Texttomeh2
 
         private void button4_Click(object sender, EventArgs e)
         {
-            UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
-            novels.Add(this);
-            //Event declared above
-            UpdateNovels(this, args);
+            
             this.Close();
 
 
@@ -128,7 +129,7 @@ namespace Texttomeh2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+            this.Name = textBox1.Text;
         }
     }
 

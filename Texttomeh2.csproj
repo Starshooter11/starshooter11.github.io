@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\UpdateNovels.cs" />
+    <Compile Include="Novels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Novels.Designer.cs">
+      <DependentUpon>Novels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Novels.resx">
+      <DependentUpon>Novels.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Plot.resx">
       <DependentUpon>Plot.cs</DependentUpon>
     </EmbeddedResource>

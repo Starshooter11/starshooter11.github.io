@@ -11,6 +11,7 @@ using Texttomeh2.Events;
 
 namespace Texttomeh2
 {
+    // option page where the creation of different 'cards' happens
     public partial class OptionPage : Form
     {
         //Delegate
@@ -21,7 +22,7 @@ namespace Texttomeh2
         //UpdateNovels is the variable used by Homepage form
         public event NovelsHandler UpdateNovels;
 
-
+        // access to edit this list; will be used to pass on editing function to other forms
         public List<Form> novels;
         public OptionPage()
         {
@@ -29,7 +30,8 @@ namespace Texttomeh2
             this.Visible = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //character form button
+        private void charButton_Click(object sender, EventArgs e)
         {
             Character charForm = new Character();
 
@@ -42,8 +44,8 @@ namespace Texttomeh2
             
         }
 
-
-        private void button3_Click(object sender, EventArgs e)
+        // plot form button
+        private void plotButton_Click(object sender, EventArgs e)
         {
             Plot plotForm = new Plot();
             this.Close();

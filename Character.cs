@@ -26,6 +26,7 @@ namespace Texttomeh2
         public List<Form> novels;
 
         public delegate void NovelsHandler(object sender, UpdateNovelsEventsArgs e);
+        public int charNum;
 
         //Event for Delegate 
         //Type NovelsHandler matches the Delegate above

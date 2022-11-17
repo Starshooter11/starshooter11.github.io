@@ -24,6 +24,10 @@ namespace Texttomeh2
 
         // access to edit this list; will be used to pass on editing function to other forms
         public List<Form> novels;
+
+        public int charNum;
+        public int plotNum;
+        public int worldNum;
         public OptionPage()
         {
             InitializeComponent();
@@ -38,7 +42,7 @@ namespace Texttomeh2
             //temporary for testing, will be changed to a list for chars later
             charForm.novels = this.novels;
             charForm.UpdateNovels += new Character.NovelsHandler(UpdateNovels);
-
+            charForm.charNum = this.charNum;
             this.Close();
 
             

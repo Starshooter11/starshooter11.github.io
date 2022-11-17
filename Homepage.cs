@@ -21,9 +21,16 @@ namespace Texttomeh2
         // list that stores all novels, currently storing characters for code testing purposes
         public List<Form> novels = new List<Form>();
 
+        private int charNum;
+        private int plotNum;
+        private int worldNum;
+
         public Homepage()
         {
             InitializeComponent();
+            charNum = 0;
+            plotNum = 0;
+            worldNum = 0;
             
         }
 
@@ -35,6 +42,11 @@ namespace Texttomeh2
 
             //sets up the communication-between-forms event handler
             optionForm.UpdateNovels += new OptionPage.NovelsHandler(novelsUpdate);
+
+            //set pointer for char/plot/world
+            optionForm.charNum = this.charNum;
+            optionForm.plotNum = this.plotNum;
+            optionForm.worldNum = this.worldNum;
         }
 
         private void novelsUpdate(object s, UpdateNovelsEventsArgs e)

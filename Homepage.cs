@@ -14,12 +14,13 @@ namespace Texttomeh2
     // this is the homepage screen of the application. it starts here
     public partial class Homepage : Form
     {
-        private int pointer = -1;
+        private int pointer = 0;
         private int novelLocX = 12;
         private int novelLocY = 60;
 
         // list that stores all novels, currently storing characters for code testing purposes
-        public List<Form> novels = new List<Form>();
+        public Dictionary<int,Form> novels = new Dictionary<int,Form>();
+        public Dictionary<String, int> addedButtons = new Dictionary<String, int>();
 
         private int charNum;
         private int plotNum;
@@ -51,15 +52,11 @@ namespace Texttomeh2
 
         private void novelsUpdate(object s, UpdateNovelsEventsArgs e)
         {
-            pointer += 1;
+            charNum += 1;
             //currently testing using this to check, will eventually changed to added buttons
             novels = e.GetNovels;
             String novelsString = "";
-            for ( int i = 0; i < novels.Count; i++)
-            {
-                novelsString = novelsString + "; " + novels[i].Name;
-            }
-            MessageBox.Show(novelsString);
+            
 
             /*math for buttons
              * start at 12, 60
@@ -73,14 +70,18 @@ namespace Texttomeh2
             novelButton.Text = novels[pointer].Name;
             novelButton.Click += new EventHandler(this.novelButton_Click);
             this.Controls.Add(novelButton);
-
+            addedButtons.Add(novelButton.Text, charNum-1);
+            pointer += 1;
             novelLocX += 134 + 6;
 
         }
 
         private void novelButton_Click(object sender, EventArgs e)
         {
-            novels[pointer].Visible = true;
+            String splicing = sender.ToString().Split(':')[1].Substring(1);
+            MessageBox.Show(addedButtons[splicing].ToString());
+            novels[addedButtons[splicing]].Visible = true;
+                
         }
 
         private void Form1_Load(object sender, EventArgs e)

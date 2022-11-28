@@ -9,14 +9,14 @@ namespace Texttomeh2.Events
 {
     public class UpdateNovelsEventsArgs : EventArgs
     {
-        private List<Form> novels = new List<Form>();
+        private Dictionary<int,Form> novels = new Dictionary<int,Form>();
 
-        public UpdateNovelsEventsArgs(List<Form> c)
+        public UpdateNovelsEventsArgs(Dictionary<int,Form> c)
         {
             novels = c;
         }
 
-        public List<Form> GetNovels
+        public Dictionary<int,Form> GetNovels
         {
             get
             {

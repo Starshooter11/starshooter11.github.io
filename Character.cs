@@ -23,7 +23,7 @@ namespace Texttomeh2
 
         public string charName = "";
 
-        public List<Form> novels;
+        public Dictionary<int, Form> novels;
 
         public delegate void NovelsHandler(object sender, UpdateNovelsEventsArgs e);
         public int charNum;
@@ -41,7 +41,18 @@ namespace Texttomeh2
 
         private void Form2_Load(object sender, EventArgs e)
         {
-   
+           // this.SetControls();
+        }
+
+        private void SetControls()
+        {
+            // makes form uneditable to user
+            
+            /* som reason isn't working correctly
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            */
+
         }
 
 
@@ -85,32 +96,29 @@ namespace Texttomeh2
                 myTB.BringToFront();
                 numYTB += 20 + 6;
                 addCount += 1;
+
+                TextBox myLB = new TextBox();
+                myLB.Location = new Point(numXLabel, numYLabel);
+                myLB.Size = new Size(110, 20);
+                myLB.Name = "progCreLB";
+                myLB.Font = new Font("MS Sans Serif", 12f);
+                myLB.BackColor = Color.FromKnownColor(System.Drawing.KnownColor.GradientInactiveCaption);
+                myLB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+                // Adding TB to form
+                this.Controls.Add(myLB);
+                myLB.BringToFront();
+                numYLabel += 20 + 6;
+                addCount += 1;
             }
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            TextBox myLB = new TextBox();
-            myLB.Location = new Point(numXLabel, numYLabel);
-            myLB.Size = new Size(110, 20);
-            myLB.Name = "progCreLB";
-            myLB.Font = new Font("MS Sans Serif", 12f);
-            myLB.BackColor = Color.FromKnownColor(System.Drawing.KnownColor.GradientInactiveCaption);
-            myLB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-
-            // Adding TB to form
-            this.Controls.Add(myLB);
-            myLB.BringToFront();
-            numYLabel += 20 + 6;
-            addCount += 1;
-            
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
             UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
-            novels.Add(this);
+            novels.Add(charNum,this);
             //Event declared above
             UpdateNovels(this, args);
             this.Visible = false;
@@ -130,7 +138,7 @@ namespace Texttomeh2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            this.Name = textBox1.Text;
+            this.Name = nameBox.Text;
         }
     }
 

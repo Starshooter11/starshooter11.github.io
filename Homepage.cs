@@ -22,37 +22,31 @@ namespace Texttomeh2
         public Dictionary<int,Form> novels = new Dictionary<int,Form>();
         public Dictionary<String, int> addedButtons = new Dictionary<String, int>();
 
-        private int charNum;
-        private int plotNum;
-        private int worldNum;
+        private int novelNum;
 
         public Homepage()
         {
             InitializeComponent();
-            charNum = 0;
-            plotNum = 0;
-            worldNum = 0;
+            novelNum = 0;
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             // opens option page for options to create new novel/char/plot/world
-            OptionPage optionForm = new OptionPage();
-            optionForm.novels = this.novels;
+            Novels novel = new Novels();
+            novel.novels = this.novels;
 
             //sets up the communication-between-forms event handler
-            optionForm.UpdateNovels += new OptionPage.NovelsHandler(novelsUpdate);
+            novel.UpdateNovels += new Novels.NovelsHandler(novelsUpdate);
 
             //set pointer for char/plot/world
-            optionForm.charNum = this.charNum;
-            optionForm.plotNum = this.plotNum;
-            optionForm.worldNum = this.worldNum;
+            novel.novelNum = this.novelNum;
         }
 
         private void novelsUpdate(object s, UpdateNovelsEventsArgs e)
         {
-            charNum += 1;
+            novelNum += 1;
             //currently testing using this to check, will eventually changed to added buttons
             novels = e.GetNovels;
             String novelsString = "";
@@ -70,7 +64,7 @@ namespace Texttomeh2
             novelButton.Text = novels[pointer].Name;
             novelButton.Click += new EventHandler(this.novelButton_Click);
             this.Controls.Add(novelButton);
-            addedButtons.Add(novelButton.Text, charNum-1);
+            addedButtons.Add(novelButton.Text, novelNum-1);
             pointer += 1;
             novelLocX += 134 + 6;
 

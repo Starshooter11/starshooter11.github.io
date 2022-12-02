@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\UpdateCards.cs" />
     <Compile Include="Events\UpdateNovels.cs" />
     <Compile Include="Novels.cs">
       <SubType>Form</SubType>

@@ -26,7 +26,7 @@ namespace Texttomeh2
         public Dictionary<int, Form> novels;
 
         public delegate void NovelsHandler(object sender, UpdateNovelsEventsArgs e);
-        public int charNum;
+        public int cardNum;
 
         //Event for Delegate 
         //Type NovelsHandler matches the Delegate above
@@ -118,7 +118,7 @@ namespace Texttomeh2
         private void button3_Click(object sender, EventArgs e)
         {
             UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
-            novels.Add(charNum,this);
+            novels.Add(cardNum,this);
             //Event declared above
             UpdateNovels(this, args);
             this.Visible = false;

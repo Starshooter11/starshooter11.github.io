@@ -23,7 +23,7 @@ namespace Texttomeh2
         public event NovelsHandler UpdateNovels;
 
         // access to edit this list; will be used to pass on editing function to other forms
-        public List<Form> novels;
+        public Dictionary<int, Form> novels;
 
         public int charNum;
         public int plotNum;

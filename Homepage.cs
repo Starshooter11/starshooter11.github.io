@@ -11,22 +11,21 @@ using Texttomeh2.Events;
 
 namespace Texttomeh2
 {
-    // this is the homepage screen of the application
+    // this is the homepage screen of the application. it starts here
     public partial class Homepage : Form
     {
-        private int pointer = -1; //used to keep track of novels
-        private int novelLocX = 12; // used to keep track of button locations
-        private int novelLocY = 60; // used to keep track of button locations
+        private int pointer = 0;
+        private int novelLocX = 12;
+        private int novelLocY = 60;
 
         // list that stores all novels, currently storing characters for code testing purposes
-        public List<Form> novels = new List<Form>();
+        public Dictionary<int,Form> novels = new Dictionary<int,Form>();
+        public Dictionary<String, int> addedButtons = new Dictionary<String, int>();
 
-        //used to track different card counts
         private int charNum;
         private int plotNum;
         private int worldNum;
 
-        //intializing
         public Homepage()
         {
             InitializeComponent();
@@ -53,17 +52,17 @@ namespace Texttomeh2
 
         private void novelsUpdate(object s, UpdateNovelsEventsArgs e)
         {
-            pointer += 1;
+            charNum += 1;
             //currently testing using this to check, will eventually changed to added buttons
             novels = e.GetNovels;
+            String novelsString = "";
+            
 
-            /* numbers for buttons
+            /*math for buttons
              * start at 12, 60
              * size 134, 180
              * split width still 6
              */
-
-            // creates new button to open-close novels
             Button novelButton = new Button();
             novelButton.Location = new Point(novelLocX, novelLocY);
             novelButton.Size = new Size(134, 180);
@@ -71,19 +70,23 @@ namespace Texttomeh2
             novelButton.Text = novels[pointer].Name;
             novelButton.Click += new EventHandler(this.novelButton_Click);
             this.Controls.Add(novelButton);
-
+            addedButtons.Add(novelButton.Text, charNum-1);
+            pointer += 1;
             novelLocX += 134 + 6;
 
         }
 
         private void novelButton_Click(object sender, EventArgs e)
         {
-            novels[pointer].Visible = true;
+            String splicing = sender.ToString().Split(':')[1].Substring(1);
+            MessageBox.Show(addedButtons[splicing].ToString());
+            novels[addedButtons[splicing]].Visible = true;
+                
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // centers form
+            //makes form uneditable to user
             this.CenterToScreen();
             this.SetControls();
         }

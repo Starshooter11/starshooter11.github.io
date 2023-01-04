@@ -52,7 +52,6 @@ namespace Texttomeh2
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             */
-
         }
 
 
@@ -117,16 +116,18 @@ namespace Texttomeh2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
-            novels.Add(charNum,this);
-            //Event declared above
-            UpdateNovels(this, args);
+            if (CloseCount == 0)
+            {
+                UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
+                novels.Add(charNum, this);
+                //Event declared above
+                UpdateNovels(this, args);
+            }
+            CloseCount += 1;
             this.Visible = false;
 
         }
 
-
-        
 
         private void button4_Click(object sender, EventArgs e)
         {

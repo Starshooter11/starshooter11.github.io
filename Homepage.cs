@@ -11,20 +11,22 @@ using Texttomeh2.Events;
 
 namespace Texttomeh2
 {
-    // this is the homepage screen of the application. it starts here
+    // this is the homepage screen of the application
     public partial class Homepage : Form
     {
-        private int pointer = -1;
-        private int novelLocX = 12;
-        private int novelLocY = 60;
+        private int pointer = -1; //used to keep track of novels
+        private int novelLocX = 12; // used to keep track of button locations
+        private int novelLocY = 60; // used to keep track of button locations
 
         // list that stores all novels, currently storing characters for code testing purposes
         public List<Form> novels = new List<Form>();
 
+        //used to track different card counts
         private int charNum;
         private int plotNum;
         private int worldNum;
 
+        //intializing
         public Homepage()
         {
             InitializeComponent();
@@ -54,18 +56,14 @@ namespace Texttomeh2
             pointer += 1;
             //currently testing using this to check, will eventually changed to added buttons
             novels = e.GetNovels;
-            String novelsString = "";
-            for ( int i = 0; i < novels.Count; i++)
-            {
-                novelsString = novelsString + "; " + novels[i].Name;
-            }
-            MessageBox.Show(novelsString);
 
-            /*math for buttons
+            /* numbers for buttons
              * start at 12, 60
              * size 134, 180
              * split width still 6
              */
+
+            // creates new button to open-close novels
             Button novelButton = new Button();
             novelButton.Location = new Point(novelLocX, novelLocY);
             novelButton.Size = new Size(134, 180);
@@ -85,7 +83,7 @@ namespace Texttomeh2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //makes form uneditable to user
+            // centers form
             this.CenterToScreen();
             this.SetControls();
         }

@@ -15,17 +15,14 @@ namespace Texttomeh2
     public partial class OptionPage : Form
     {
         //Delegate
-        public delegate void NovelsHandler(object sender, UpdateNovelsEventsArgs e);
         public delegate void CardsHandler(object sender, UpdateCardsEventsArgs e);
 
         //Event for Delegate 
-        //Type NovelsHandler matches the Delegate above
-        //UpdateNovels is the variable used by Homepage form
-        public event NovelsHandler UpdateNovels;
+        //Type CardsHandler matches the Delegate above
+        //UpdateCards is the variable used by Novel form
         public event CardsHandler UpdateCards;
 
         // access to edit this list; will be used to pass on editing function to other forms
-        public Dictionary<int, Form> novels;
         public Dictionary<int, Form> cards;
 
         public int cardNum;
@@ -41,8 +38,8 @@ namespace Texttomeh2
             Character charForm = new Character();
 
             //temporary for testing, will be changed to a list for chars later
-            charForm.novels = this.novels;
-            charForm.UpdateNovels += new Character.NovelsHandler(UpdateNovels);
+            charForm.cards = this.cards;
+            charForm.UpdateCards += new Character.CardsHandler(UpdateCards);
             charForm.cardNum = this.cardNum;
             this.Close();
 
@@ -55,10 +52,10 @@ namespace Texttomeh2
             Plot plotForm = new Plot();
             this.Close();
 
-            UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
+            UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
 
             //Event declared above
-            UpdateNovels(this, args);
+            UpdateCards(this, args);
         }
 
         

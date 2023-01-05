@@ -23,15 +23,15 @@ namespace Texttomeh2
 
         public string charName = "";
 
-        public Dictionary<int, Form> novels;
+        public Dictionary<int, Form> cards;
 
-        public delegate void NovelsHandler(object sender, UpdateNovelsEventsArgs e);
+        public delegate void CardsHandler(object sender, UpdateCardsEventsArgs e);
         public int cardNum;
 
         //Event for Delegate 
         //Type NovelsHandler matches the Delegate above
         //UpdateNovels is the variable used by Homepage form
-        public event NovelsHandler UpdateNovels;
+        public event CardsHandler UpdateCards;
 
         public Character()
         {
@@ -117,10 +117,10 @@ namespace Texttomeh2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
-            novels.Add(cardNum,this);
+            UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
+            cards.Add(cardNum,this);
             //Event declared above
-            UpdateNovels(this, args);
+            UpdateCards(this, args);
             this.Visible = false;
 
         }
@@ -130,10 +130,7 @@ namespace Texttomeh2
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
             this.Close();
-
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

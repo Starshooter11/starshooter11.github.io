@@ -51,7 +51,7 @@ namespace Texttomeh2
         {
             // opens option page for options to create new novel/char/plot/world
             OptionPage optionForm = new OptionPage();
-            optionForm.novels = this.cards;
+            optionForm.cards = this.cards;
 
             //sets up the communication-between-forms event handler
             optionForm.UpdateCards += new OptionPage.CardsHandler(cardsUpdate);

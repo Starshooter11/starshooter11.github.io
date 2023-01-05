@@ -56,6 +56,7 @@ namespace Texttomeh2
             this.Name = novelName.Text;
         }
 
+        // adds cards
         private void addNewCard_Click(object sender, EventArgs e)
         {
             // opens option page for options to create new novel/char/plot/world
@@ -64,13 +65,13 @@ namespace Texttomeh2
 
             //sets up the communication-between-forms event handler
             optionForm.UpdateCards += new OptionPage.CardsHandler(cardsUpdate);
-
             optionForm.cardNum = this.cardNum;
         }
+
+        // adds button linked to recently closed card
         private void cardsUpdate(object s, UpdateCardsEventsArgs e)
         {
             cardNum += 1;
-            //currently testing using this to check, will eventually changed to added buttons
             cards = e.GetCards;
 
             /*math for buttons
@@ -90,7 +91,8 @@ namespace Texttomeh2
             novelLocX += 134 + 6;
 
         }
-
+        
+        // new button click event utilizing inherited pointers
         private void cardButton_Click(object sender, EventArgs e)
         {
             String splicing = sender.ToString().Split(':')[1].Substring(1);
@@ -99,6 +101,7 @@ namespace Texttomeh2
 
         }
 
+        // saving
         private void save_Click(object sender, EventArgs e)
         {
             if (CloseCount == 0)
@@ -111,6 +114,12 @@ namespace Texttomeh2
             }
             
             this.Visible = false;
+        }
+
+        //deletes form
+        private void delete_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

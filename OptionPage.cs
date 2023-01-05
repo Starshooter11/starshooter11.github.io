@@ -14,6 +14,10 @@ namespace Texttomeh2
     // option page where the creation of different 'cards' happens
     public partial class OptionPage : Form
     {
+        // access to edit this list; will be used to pass on editing function to other forms
+        public Dictionary<int, Form> cards;
+        public int cardNum;
+
         //Delegate
         public delegate void CardsHandler(object sender, UpdateCardsEventsArgs e);
 
@@ -22,10 +26,7 @@ namespace Texttomeh2
         //UpdateCards is the variable used by Novel form
         public event CardsHandler UpdateCards;
 
-        // access to edit this list; will be used to pass on editing function to other forms
-        public Dictionary<int, Form> cards;
-
-        public int cardNum;
+        // start
         public OptionPage()
         {
             InitializeComponent();
@@ -58,6 +59,19 @@ namespace Texttomeh2
             UpdateCards(this, args);
         }
 
+        /* world form button(WIP)
         
+        {
+            World worldForm = new World();
+            this.Close();
+
+            UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
+
+            //Event declared above
+            UpdateCards(this, args);
+        }
+        */
+
+
     }
 }

@@ -14,32 +14,41 @@ namespace Texttomeh2
     // novel page where user can view contents of a novel
     public partial class Novels : Form
     {
+        // pointer used to track
         private int pointer = 0;
+        //numbers used to determine buttons placement
         private int novelLocX = 12;
         private int novelLocY = 60;
+        // counts number of closes
+        private int CloseCount = 0;
+        private int cardNum;
+        
 
-        // list that stores all novels, currently storing characters for code testing purposes
+        // variables that stores all novels, currently storing characters for code testing purposes
         public Dictionary<int, Form> novels = new Dictionary<int, Form>();
         public Dictionary<int, Form> cards = new Dictionary<int, Form>();
         public Dictionary<String, int> addedButtons = new Dictionary<String, int>();
+        public int novelNum;
 
-
+        //Delegate
         public delegate void NovelsHandler(object sender, UpdateNovelsEventsArgs e);
+
+        //Event for Delegate 
+        //Type NovelsHandler matches the Delegate above
+        //UpdateNovels is the variable used by Homepage form
         public event NovelsHandler UpdateNovels;
 
-        private int cardNum = 0;
-        public int novelNum;
+       //start
         public Novels()
         {
             InitializeComponent();
+            this.Visible = true;
+            cardNum = 0;
         }
 
         private void Novels_Load(object sender, EventArgs e)
         {
-            if (cards.Count == 0)
-            {
-                MessageBox.Show("This novel is currently empty!");
-            }
+            
         }
 
         private void novelName_TextChanged(object sender, EventArgs e)
@@ -56,11 +65,7 @@ namespace Texttomeh2
             //sets up the communication-between-forms event handler
             optionForm.UpdateCards += new OptionPage.CardsHandler(cardsUpdate);
 
-            /*set pointer for char/plot/world
-            optionForm.charNum = this.charNum;
-            optionForm.plotNum = this.plotNum;
-            optionForm.worldNum = this.worldNum;
-            */
+            optionForm.cardNum = this.cardNum;
         }
         private void cardsUpdate(object s, UpdateCardsEventsArgs e)
         {
@@ -92,6 +97,20 @@ namespace Texttomeh2
             MessageBox.Show(addedButtons[splicing].ToString());
             cards[addedButtons[splicing]].Visible = true;
 
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            if (CloseCount == 0)
+            {
+                UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
+                novels.Add(novelNum, this);
+                //Event declared above
+                UpdateNovels(this, args);
+                CloseCount += 1;
+            }
+            
+            this.Visible = false;
         }
     }
 }

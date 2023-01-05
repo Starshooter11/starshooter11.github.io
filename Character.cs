@@ -13,25 +13,26 @@ namespace Texttomeh2
 {
     public partial class Character : Form  // character form
     {
+        public int cardNum;
+        public Dictionary<int, Form> cards;
+
+        // Delegate
+        public delegate void CardsHandler(object sender, UpdateCardsEventsArgs e);
+
+        //Event for Delegate 
+        //Type CardsHandler matches the Delegate above
+        //UpdateCards is the variable used by Novels form
+        public event CardsHandler UpdateCards;
+
+        // counts number of closes
+        private int CloseCount = 0;
+
+        // numbers used to determine location of added buttons
         private int numXLabel = 315;
         private int numYLabel = 79;
         private int numXTB = 438;
         private int numYTB = 79;
         private int addCount = 0;
-
-        private int CloseCount = 0;
-
-        public string charName = "";
-
-        public Dictionary<int, Form> cards;
-
-        public delegate void CardsHandler(object sender, UpdateCardsEventsArgs e);
-        public int cardNum;
-
-        //Event for Delegate 
-        //Type NovelsHandler matches the Delegate above
-        //UpdateNovels is the variable used by Homepage form
-        public event CardsHandler UpdateCards;
 
         public Character()
         {
@@ -117,10 +118,15 @@ namespace Texttomeh2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
-            cards.Add(cardNum,this);
-            //Event declared above
-            UpdateCards(this, args);
+            if (CloseCount == 0)
+            {
+                MessageBox.Show(cardNum.ToString());
+                UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
+                cards.Add(cardNum, this);
+                //Event declared above
+                CloseCount += 1;
+                UpdateCards(this, args);
+            }
             this.Visible = false;
 
         }

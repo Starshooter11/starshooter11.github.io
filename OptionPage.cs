@@ -19,12 +19,13 @@ namespace Texttomeh2
         public int cardNum;
 
         //Delegate
-        public delegate void CardsHandler(object sender, UpdateCardsEventsArgs e);
+        public delegate void CardsHandler(Form sender, UpdateCardsEventsArgs e);
 
         //Event for Delegate 
         //Type CardsHandler matches the Delegate above
         //UpdateCards is the variable used by Novel form
         public event CardsHandler UpdateCards;
+        public event CardsHandler DeleteCards;
 
         // start
         public OptionPage()
@@ -37,41 +38,32 @@ namespace Texttomeh2
         private void charButton_Click(object sender, EventArgs e)
         {
             Character charForm = new Character();
-
-            //temporary for testing, will be changed to a list for chars later
             charForm.cards = this.cards;
             charForm.UpdateCards += new Character.CardsHandler(UpdateCards);
+            charForm.DeleteCards += new Character.CardsHandler(DeleteCards);
             charForm.cardNum = this.cardNum;
             this.Close();
-
-            
         }
 
         // plot form button
         private void plotButton_Click(object sender, EventArgs e)
         {
             Plot plotForm = new Plot();
+            plotForm.cards = this.cards;
+            plotForm.UpdateCards += new Plot.CardsHandler(UpdateCards);
+            plotForm.DeleteCards += new Plot.CardsHandler(DeleteCards);
+            plotForm.cardNum = this.cardNum;
             this.Close();
-
-            UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
-
-            //Event declared above
-            UpdateCards(this, args);
         }
 
-        /* world form button(WIP)
-        
+        private void button2_Click(object sender, EventArgs e)
         {
             World worldForm = new World();
+            worldForm.cards = this.cards;
+            worldForm.UpdateCards += new World.CardsHandler(UpdateCards);
+            worldForm.DeleteCards += new World.CardsHandler(DeleteCards);
+            worldForm.cardNum = this.cardNum;
             this.Close();
-
-            UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
-
-            //Event declared above
-            UpdateCards(this, args);
         }
-        */
-
-
     }
 }

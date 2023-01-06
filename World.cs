@@ -11,7 +11,7 @@ using Texttomeh2.Events;
 
 namespace Texttomeh2
 {
-    public partial class Plot : Form
+    public partial class World : Form
     {
         public int cardNum;
         public Dictionary<int, Form> cards;
@@ -34,7 +34,8 @@ namespace Texttomeh2
         private int numXTB = 438;
         private int numYTB = 79;
         private int addCount = 0;
-        public Plot()
+
+        public World()
         {
             InitializeComponent();
             this.Visible = true;
@@ -44,6 +45,7 @@ namespace Texttomeh2
         {
 
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -65,12 +67,45 @@ namespace Texttomeh2
             this.Close();
         }
 
-
-        private void eventName_TextChanged(object sender, EventArgs e)
+        private void addTB_Click(object sender, EventArgs e)
         {
-            this.Name = eventName.Text;
+            if (addCount >= 7)
+            {
+                MessageBox.Show("Too many TBs!");
+            }
+            else
+            {
+                TextBox myTB = new TextBox();
+                myTB.Location = new Point(numXTB, numYTB);
+                myTB.Size = new Size(128, 20);
+                myTB.Name = "progCreTB";
+                myTB.Font = new Font("MS Sans Serif", 8.25f);
+
+                // Adding TB to form
+                this.Controls.Add(myTB);
+                myTB.BringToFront();
+                numYTB += 20 + 6;
+                addCount += 1;
+
+                TextBox myLB = new TextBox();
+                myLB.Location = new Point(numXLabel, numYLabel);
+                myLB.Size = new Size(110, 20);
+                myLB.Name = "progCreLB";
+                myLB.Font = new Font("MS Sans Serif", 12f);
+                myLB.BackColor = Color.FromKnownColor(System.Drawing.KnownColor.GradientInactiveCaption);
+                myLB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+                // Adding TB to form
+                this.Controls.Add(myLB);
+                myLB.BringToFront();
+                numYLabel += 20 + 6;
+                addCount += 1;
+            }
         }
 
+        private void worldName_TextChanged(object sender, EventArgs e)
+        {
+            this.Name = worldName.Text;
+        }
     }
-
 }

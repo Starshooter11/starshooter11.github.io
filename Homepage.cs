@@ -60,15 +60,15 @@ namespace Texttomeh2
 
             //sets up the communication-between-forms event handler
             novel.UpdateNovels += new Novels.NovelsHandler(novelsUpdate);
+            novel.DeleteNovels += new Novels.NovelsHandler(novelsDelete);
 
             // inherited pointer
             novel.novelNum = this.novelNum;
         }
 
         // adds a button linked to recently saved novel
-        private void novelsUpdate(object s, UpdateNovelsEventsArgs e)
+        private void novelsUpdate(Form s, UpdateNovelsEventsArgs e)
         {
-            novelNum += 1;
             novels = e.GetNovels;
 
             /*math for buttons
@@ -81,14 +81,13 @@ namespace Texttomeh2
             Button novelButton = new Button();
             novelButton.Location = new Point(novelLocX, novelLocY);
             novelButton.Size = new Size(134, 180);
-            novelButton.Name = novels[pointer].Name;
-            novelButton.Text = novels[pointer].Name;
+            novelButton.Name = novels[novelNum].Name;
+            novelButton.Text = novels[novelNum].Name;
             novelButton.Click += new EventHandler(this.novelButton_Click);
             this.Controls.Add(novelButton);
-            addedButtons.Add(novelButton.Text, novelNum-1);
-
+            addedButtons.Add(novelButton.Text, novelNum);
             // location changes
-            pointer += 1;
+            novelNum += 1;
             novelLocX += 134 + 6;
 
         }
@@ -102,7 +101,26 @@ namespace Texttomeh2
                 
         }
 
-        
+        private void novelsDelete(Form s, UpdateNovelsEventsArgs e)
+        {
+            novels = e.GetNovels;
+            String novelName = s.Name;
+            novels[addedButtons[novelName]].Close();
+            novels.Remove(addedButtons[novelName]);
+            addedButtons.Remove(novelName);
+
+            foreach (Control c in this.Controls)
+            {
+                Button b = c as Button;
+                if (b != null)
+                {
+                    if (b.Name == novelName)
+                    {
+                        b.Hide();
+                    }
+                }
+            }
+        }
 
 
 
@@ -110,7 +128,9 @@ namespace Texttomeh2
 
 
 
-}
+
+
+    }
 
 
 

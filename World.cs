@@ -11,7 +11,7 @@ using Texttomeh2.Events;
 
 namespace Texttomeh2
 {
-    public partial class Plot : Form
+    public partial class World : Form
     {
         public int cardNum;
         public Dictionary<int, Form> cards;
@@ -33,7 +33,8 @@ namespace Texttomeh2
         private int numXTB = 438;
         private int numYTB = 79;
         private int addCount = 0;
-        public Plot()
+
+        public World()
         {
             InitializeComponent();
             this.Visible = true;
@@ -85,13 +86,7 @@ namespace Texttomeh2
             this.Close();
         }
 
-
-        private void eventName_TextChanged(object sender, EventArgs e)
-        {
-            this.Name = eventName.Text;
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
+        private void addTB_Click(object sender, EventArgs e)
         {
             if (addCount >= 7)
             {
@@ -127,7 +122,9 @@ namespace Texttomeh2
             }
         }
 
-
+        private void worldName_TextChanged(object sender, EventArgs e)
+        {
+            this.Name = worldName.Text;
+        }
     }
-
 }

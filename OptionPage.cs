@@ -19,12 +19,13 @@ namespace Texttomeh2
         public int cardNum;
 
         //Delegate
-        public delegate void CardsHandler(object sender, UpdateCardsEventsArgs e);
+        public delegate void CardsHandler(Form sender, UpdateCardsEventsArgs e);
 
         //Event for Delegate 
         //Type CardsHandler matches the Delegate above
         //UpdateCards is the variable used by Novel form
         public event CardsHandler UpdateCards;
+        public event CardsHandler DeleteCards;
 
         // start
         public OptionPage()
@@ -41,10 +42,9 @@ namespace Texttomeh2
             //temporary for testing, will be changed to a list for chars later
             charForm.cards = this.cards;
             charForm.UpdateCards += new Character.CardsHandler(UpdateCards);
+            charForm.DeleteCards += new Character.CardsHandler(DeleteCards);
             charForm.cardNum = this.cardNum;
             this.Close();
-
-            
         }
 
         // plot form button
@@ -59,19 +59,15 @@ namespace Texttomeh2
             UpdateCards(this, args);
         }
 
-        /* world form button(WIP)
-        
+        private void button2_Click(object sender, EventArgs e)
         {
             World worldForm = new World();
+
+            //temporary for testing, will be changed to a list for chars later
+            worldForm.cards = this.cards;
+            //worldForm.UpdateCards += new World.CardsHandler(UpdateCards);
+            worldForm.cardNum = this.cardNum;
             this.Close();
-
-            UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
-
-            //Event declared above
-            UpdateCards(this, args);
         }
-        */
-
-
     }
 }

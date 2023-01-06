@@ -17,12 +17,13 @@ namespace Texttomeh2
         public Dictionary<int, Form> cards;
 
         // Delegate
-        public delegate void CardsHandler(object sender, UpdateCardsEventsArgs e);
+        public delegate void CardsHandler(Form sender, UpdateCardsEventsArgs e);
 
         //Event for Delegate 
         //Type CardsHandler matches the Delegate above
         //UpdateCards is the variable used by Novels form
         public event CardsHandler UpdateCards;
+        public event CardsHandler DeleteCards;
 
         // counts number of closes
         private int CloseCount = 0;
@@ -136,6 +137,8 @@ namespace Texttomeh2
 
         private void button4_Click(object sender, EventArgs e)
         {
+            UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
+            DeleteCards(this, args);
             this.Close();
         }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace Texttomeh2
 {
-    partial class Plot
+    partial class World
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,6 @@ namespace Texttomeh2
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,15 +39,13 @@ namespace Texttomeh2
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.eventName = new System.Windows.Forms.TextBox();
-            this.addBox = new System.Windows.Forms.Button();
+            this.worldName = new System.Windows.Forms.TextBox();
+            this.addTB = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -78,28 +74,6 @@ namespace Texttomeh2
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.Location = new System.Drawing.Point(12, 276);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 20);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Climax";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(12, 250);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 20);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Secondary Figure";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -107,9 +81,9 @@ namespace Texttomeh2
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label6.Location = new System.Drawing.Point(12, 224);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 20);
+            this.label6.Size = new System.Drawing.Size(93, 20);
             this.label6.TabIndex = 32;
-            this.label6.Text = "Key Figure";
+            this.label6.Text = "Landmark 3";
             // 
             // label5
             // 
@@ -118,9 +92,9 @@ namespace Texttomeh2
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label5.Location = new System.Drawing.Point(12, 198);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 20);
+            this.label5.Size = new System.Drawing.Size(93, 20);
             this.label5.TabIndex = 31;
-            this.label5.Text = "Place";
+            this.label5.Text = "Landmark 2";
             // 
             // label4
             // 
@@ -129,9 +103,9 @@ namespace Texttomeh2
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label4.Location = new System.Drawing.Point(12, 172);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 20);
+            this.label4.Size = new System.Drawing.Size(93, 20);
             this.label4.TabIndex = 30;
-            this.label4.Text = "Importance";
+            this.label4.Text = "Landmark 1";
             // 
             // label3
             // 
@@ -140,9 +114,9 @@ namespace Texttomeh2
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.Location = new System.Drawing.Point(12, 146);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 20);
+            this.label3.Size = new System.Drawing.Size(93, 20);
             this.label3.TabIndex = 29;
-            this.label3.Text = "After";
+            this.label3.Text = "Key Event 3";
             // 
             // label2
             // 
@@ -151,9 +125,9 @@ namespace Texttomeh2
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.Location = new System.Drawing.Point(12, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 20);
+            this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 28;
-            this.label2.Text = "Before";
+            this.label2.Text = "Key Event 2";
             // 
             // label1
             // 
@@ -162,9 +136,9 @@ namespace Texttomeh2
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.Location = new System.Drawing.Point(12, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 20);
+            this.label1.Size = new System.Drawing.Size(93, 20);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Timeline Point";
+            this.label1.Text = "Key Event 1";
             // 
             // textBox9
             // 
@@ -186,20 +160,6 @@ namespace Texttomeh2
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(128, 20);
             this.textBox7.TabIndex = 24;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(152, 250);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(128, 20);
-            this.textBox6.TabIndex = 23;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(152, 276);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(128, 20);
-            this.textBox5.TabIndex = 22;
             // 
             // textBox4
             // 
@@ -240,26 +200,26 @@ namespace Texttomeh2
             this.pictureBox3.TabIndex = 36;
             this.pictureBox3.TabStop = false;
             // 
-            // eventName
+            // worldName
             // 
-            this.eventName.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.eventName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.eventName.Location = new System.Drawing.Point(9, 18);
-            this.eventName.Name = "eventName";
-            this.eventName.Size = new System.Drawing.Size(587, 38);
-            this.eventName.TabIndex = 37;
-            this.eventName.Text = "Event Name";
-            this.eventName.TextChanged += new System.EventHandler(this.eventName_TextChanged);
+            this.worldName.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.worldName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.worldName.Location = new System.Drawing.Point(9, 18);
+            this.worldName.Name = "worldName";
+            this.worldName.Size = new System.Drawing.Size(587, 38);
+            this.worldName.TabIndex = 37;
+            this.worldName.Text = "Location Name";
+            this.worldName.TextChanged += new System.EventHandler(this.worldName_TextChanged);
             // 
-            // addBox
+            // addTB
             // 
-            this.addBox.Location = new System.Drawing.Point(521, 276);
-            this.addBox.Name = "addBox";
-            this.addBox.Size = new System.Drawing.Size(75, 23);
-            this.addBox.TabIndex = 38;
-            this.addBox.Text = "Add Box";
-            this.addBox.UseVisualStyleBackColor = true;
-            this.addBox.Click += new System.EventHandler(this.button2_Click_1);
+            this.addTB.Location = new System.Drawing.Point(521, 276);
+            this.addTB.Name = "addTB";
+            this.addTB.Size = new System.Drawing.Size(75, 23);
+            this.addTB.TabIndex = 38;
+            this.addTB.Text = "Add Box";
+            this.addTB.UseVisualStyleBackColor = true;
+            this.addTB.Click += new System.EventHandler(this.addTB_Click);
             // 
             // pictureBox6
             // 
@@ -294,9 +254,9 @@ namespace Texttomeh2
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label9.Location = new System.Drawing.Point(12, 325);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 17);
+            this.label9.Size = new System.Drawing.Size(52, 17);
             this.label9.TabIndex = 44;
-            this.label9.Text = "Beginning";
+            this.label9.Text = "History";
             // 
             // label10
             // 
@@ -304,9 +264,9 @@ namespace Texttomeh2
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label10.Location = new System.Drawing.Point(12, 490);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 17);
+            this.label10.Size = new System.Drawing.Size(84, 17);
             this.label10.TabIndex = 45;
-            this.label10.Text = "Climx";
+            this.label10.Text = "Current Day";
             // 
             // label11
             // 
@@ -314,9 +274,9 @@ namespace Texttomeh2
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label11.Location = new System.Drawing.Point(12, 655);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(222, 17);
+            this.label11.Size = new System.Drawing.Size(67, 17);
             this.label11.TabIndex = 46;
-            this.label11.Text = "Resolution and Ties to Next Event";
+            this.label11.Text = "Extra Info";
             // 
             // textBox10
             // 
@@ -362,7 +322,7 @@ namespace Texttomeh2
             this.delete.UseVisualStyleBackColor = true;
             this.delete.Click += new System.EventHandler(this.button4_Click);
             // 
-            // Plot
+            // World
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -378,12 +338,10 @@ namespace Texttomeh2
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.addBox);
-            this.Controls.Add(this.eventName);
+            this.Controls.Add(this.addTB);
+            this.Controls.Add(this.worldName);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -393,13 +351,11 @@ namespace Texttomeh2
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Plot";
+            this.Name = "World";
             this.Text = "Character";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -418,8 +374,6 @@ namespace Texttomeh2
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -429,15 +383,13 @@ namespace Texttomeh2
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox eventName;
-        private System.Windows.Forms.Button addBox;
+        private System.Windows.Forms.TextBox worldName;
+        private System.Windows.Forms.Button addTB;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;

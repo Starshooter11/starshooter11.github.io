@@ -65,11 +65,12 @@ namespace Texttomeh2
 
             //sets up the communication-between-forms event handler
             optionForm.UpdateCards += new OptionPage.CardsHandler(cardsUpdate);
+            optionForm.DeleteCards += new OptionPage.CardsHandler(cardsDelete);
             optionForm.cardNum = this.cardNum;
         }
 
         // adds button linked to recently closed card
-        private void cardsUpdate(object s, UpdateCardsEventsArgs e)
+        private void cardsUpdate(Form s, UpdateCardsEventsArgs e)
         {
             cardNum += 1;
             cards = e.GetCards;
@@ -91,12 +92,31 @@ namespace Texttomeh2
             novelLocX += 134 + 6;
 
         }
+
+        private void cardsDelete(Form s, UpdateCardsEventsArgs e)
+        {
+            cards = e.GetCards;
+            String cardName = s.Name;
+            cards[addedButtons[cardName]].Close();
+            cards.Remove(addedButtons[cardName]);
+            addedButtons.Remove(cardName);
+            foreach (Control c in this.Controls)
+            {
+                Button b = c as Button;
+                if (b != null)
+                {
+                    if (b.Name == cardName)
+                    {
+                        b.Hide();
+                    }
+                }
+            }
+        }
         
         // new button click event utilizing inherited pointers
         private void cardButton_Click(object sender, EventArgs e)
         {
             String splicing = sender.ToString().Split(':')[1].Substring(1);
-            MessageBox.Show(addedButtons[splicing].ToString());
             cards[addedButtons[splicing]].Visible = true;
 
         }

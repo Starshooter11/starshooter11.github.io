@@ -54,6 +54,12 @@
     <Compile Include="Novels.Designer.cs">
       <DependentUpon>Novels.cs</DependentUpon>
     </Compile>
+    <Compile Include="World.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="World.Designer.cs">
+      <DependentUpon>World.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Novels.resx">
       <DependentUpon>Novels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="World.resx">
+      <DependentUpon>World.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plot.resx">
       <DependentUpon>Plot.cs</DependentUpon>

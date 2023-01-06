@@ -14,103 +14,112 @@ namespace Texttomeh2
     // novel page where user can view contents of a novel
     public partial class Novels : Form
     {
-        List<Form> contents = new List<Form>();
-
-        public Dictionary<int, Form> cards = new Dictionary<int, Form>();
-
-        private int cardNum = 0;
-        private int closeCount = 0;
-        public int novelNum;
-
-        public Dictionary<String, int> addedButtons = new Dictionary<String, int>();
-
-        public Dictionary<int, Form> novels;
-        public delegate void NovelsHandler(object sender, UpdateNovelsEventsArgs e);
-        public event NovelsHandler UpdateNovels;
-
+        // pointer used to track
+        private int pointer = 0;
+        //numbers used to determine buttons placement
+        private int novelLocX = 12;
+        private int novelLocY = 60;
+        // counts number of closes
+        private int CloseCount = 0;
+        private int cardNum;
         
 
+        // variables that stores all novels, currently storing characters for code testing purposes
+        public Dictionary<int, Form> novels = new Dictionary<int, Form>();
+        public Dictionary<int, Form> cards = new Dictionary<int, Form>();
+        public Dictionary<String, int> addedButtons = new Dictionary<String, int>();
+        public int novelNum;
+
+        //Delegate
+        public delegate void NovelsHandler(object sender, UpdateNovelsEventsArgs e);
+
+        //Event for Delegate 
+        //Type NovelsHandler matches the Delegate above
+        //UpdateNovels is the variable used by Homepage form
+        public event NovelsHandler UpdateNovels;
+
+       //start
         public Novels()
         {
             InitializeComponent();
             this.Visible = true;
+            cardNum = 0;
         }
 
-        private void Novelcs_Load(object sender, EventArgs e)
+        private void Novels_Load(object sender, EventArgs e)
         {
-            if (contents.Count == 0)
-            {
-                MessageBox.Show("This novel is currently empty!");
-            }
+            
         }
 
-        private void addCard_Click(object sender, EventArgs e)
+        private void novelName_TextChanged(object sender, EventArgs e)
+        {
+            this.Name = novelName.Text;
+        }
+
+        // adds cards
+        private void addNewCard_Click(object sender, EventArgs e)
         {
             // opens option page for options to create new novel/char/plot/world
             OptionPage optionForm = new OptionPage();
             optionForm.cards = this.cards;
 
-
             //sets up the communication-between-forms event handler
             optionForm.UpdateCards += new OptionPage.CardsHandler(cardsUpdate);
-
-            //set pointer for char/plot/world
-            optionForm.cardNum = 0;
+            optionForm.cardNum = this.cardNum;
         }
+
+        // adds button linked to recently closed card
         private void cardsUpdate(object s, UpdateCardsEventsArgs e)
         {
             cardNum += 1;
-            //currently testing using this to check, will eventually changed to added buttons
             cards = e.GetCards;
+
             /*math for buttons
              * start at 12, 60
              * size 134, 180
              * split width still 6
              */
-            Button novelButton = new Button();
-            /*novelButton.Location = new Point(novelLocX, novelLocY);
-            novelButton.Size = new Size(134, 180);
-            novelButton.Name = novels[pointer].Name;
-            novelButton.Text = novels[pointer].Name;
-            novelButton.Click += new EventHandler(this.novelButton_Click);
-            this.Controls.Add(novelButton);
-            addedButtons.Add(novelButton.Text, charNum - 1);
+            Button cardButton = new Button();
+            cardButton.Location = new Point(novelLocX, novelLocY);
+            cardButton.Size = new Size(134, 180);
+            cardButton.Name = cards[pointer].Name;
+            cardButton.Text = cards[pointer].Name;
+            cardButton.Click += new EventHandler(this.cardButton_Click);
+            this.Controls.Add(cardButton);
+            addedButtons.Add(cardButton.Text, cardNum - 1);
             pointer += 1;
             novelLocX += 134 + 6;
-            */
 
         }
-
+        
+        // new button click event utilizing inherited pointers
         private void cardButton_Click(object sender, EventArgs e)
         {
             String splicing = sender.ToString().Split(':')[1].Substring(1);
             MessageBox.Show(addedButtons[splicing].ToString());
-            int location = addedButtons[splicing];
-            cards[location].Visible = true;
+            cards[addedButtons[splicing]].Visible = true;
 
         }
 
-        private void delete_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        // saving
         private void save_Click(object sender, EventArgs e)
         {
-            if (closeCount == 0)
+            if (CloseCount == 0)
             {
                 UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
                 novels.Add(novelNum, this);
                 //Event declared above
                 UpdateNovels(this, args);
+                CloseCount += 1;
             }
-            closeCount += 1;
+            
             this.Visible = false;
         }
 
-        private void Name_TextChanged(object sender, EventArgs e)
+        //deletes form
+        private void delete_Click(object sender, EventArgs e)
         {
-            this.Name = novelName.Text;
+            this.Close();
         }
     }
 }

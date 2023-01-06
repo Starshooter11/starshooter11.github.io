@@ -29,75 +29,83 @@ namespace Texttomeh2
         /// </summary>
         private void InitializeComponent()
         {
-            this.novelName = new System.Windows.Forms.TextBox();
-            this.genre = new System.Windows.Forms.TextBox();
-            this.addCard = new System.Windows.Forms.Button();
+            this.addNewCard = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
+            this.novelName = new System.Windows.Forms.TextBox();
+            this.genre = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // novelName
+            // addNewCard
             // 
-            this.novelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.novelName.Location = new System.Drawing.Point(12, 12);
-            this.novelName.Name = "novelName";
-            this.novelName.Size = new System.Drawing.Size(196, 26);
-            this.novelName.TabIndex = 0;
-            this.novelName.Text = "Novel Name";
-            this.novelName.TextChanged += new System.EventHandler(this.Name_TextChanged);
-            // 
-            // genre
-            // 
-            this.genre.Location = new System.Drawing.Point(236, 12);
-            this.genre.Name = "genre";
-            this.genre.Size = new System.Drawing.Size(192, 20);
-            this.genre.TabIndex = 1;
-            this.genre.Text = "Genre";
-            // 
-            // addCard
-            // 
-            this.addCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.addCard.Location = new System.Drawing.Point(684, 6);
-            this.addCard.Name = "addCard";
-            this.addCard.Size = new System.Drawing.Size(104, 28);
-            this.addCard.TabIndex = 2;
-            this.addCard.Text = "Add New";
-            this.addCard.UseVisualStyleBackColor = true;
-            this.addCard.Click += new System.EventHandler(this.addCard_Click);
+            this.addNewCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.addNewCard.Location = new System.Drawing.Point(841, 8);
+            this.addNewCard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addNewCard.Name = "addNewCard";
+            this.addNewCard.Size = new System.Drawing.Size(111, 36);
+            this.addNewCard.TabIndex = 0;
+            this.addNewCard.Text = "Add New";
+            this.addNewCard.UseVisualStyleBackColor = true;
+            this.addNewCard.Click += new System.EventHandler(this.addNewCard_Click);
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(698, 412);
+            this.save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.save.Location = new System.Drawing.Point(841, 520);
+            this.save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(89, 32);
-            this.save.TabIndex = 3;
+            this.save.Size = new System.Drawing.Size(111, 36);
+            this.save.TabIndex = 1;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(603, 412);
+            this.delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.delete.Location = new System.Drawing.Point(725, 520);
+            this.delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(89, 32);
-            this.delete.TabIndex = 4;
+            this.delete.Size = new System.Drawing.Size(111, 36);
+            this.delete.TabIndex = 2;
             this.delete.Text = "Delete";
             this.delete.UseVisualStyleBackColor = true;
             this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
+            // novelName
+            // 
+            this.novelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.novelName.Location = new System.Drawing.Point(12, 6);
+            this.novelName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.novelName.Name = "novelName";
+            this.novelName.Size = new System.Drawing.Size(397, 26);
+            this.novelName.TabIndex = 3;
+            this.novelName.Text = "Novel Name";
+            this.novelName.TextChanged += new System.EventHandler(this.novelName_TextChanged);
+            // 
+            // genre
+            // 
+            this.genre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.genre.Location = new System.Drawing.Point(434, 16);
+            this.genre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.genre.Name = "genre";
+            this.genre.Size = new System.Drawing.Size(269, 23);
+            this.genre.TabIndex = 4;
+            this.genre.Text = "Genre";
             // 
             // Novels
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.delete);
-            this.Controls.Add(this.save);
-            this.Controls.Add(this.addCard);
+            this.ClientSize = new System.Drawing.Size(960, 564);
             this.Controls.Add(this.genre);
             this.Controls.Add(this.novelName);
+            this.Controls.Add(this.delete);
+            this.Controls.Add(this.save);
+            this.Controls.Add(this.addNewCard);
             this.Name = "Novels";
-            this.Text = "Novelcs";
-            this.Load += new System.EventHandler(this.Novelcs_Load);
+            this.Text = "Novels";
+            this.Load += new System.EventHandler(this.Novels_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,10 +113,10 @@ namespace Texttomeh2
 
         #endregion
 
-        private System.Windows.Forms.TextBox novelName;
-        private System.Windows.Forms.TextBox genre;
-        private System.Windows.Forms.Button addCard;
+        private System.Windows.Forms.Button addNewCard;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.TextBox novelName;
+        private System.Windows.Forms.TextBox genre;
     }
 }

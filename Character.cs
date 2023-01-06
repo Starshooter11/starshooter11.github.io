@@ -13,25 +13,26 @@ namespace Texttomeh2
 {
     public partial class Character : Form  // character form
     {
+        public int cardNum;
+        public Dictionary<int, Form> cards;
+
+        // Delegate
+        public delegate void CardsHandler(object sender, UpdateCardsEventsArgs e);
+
+        //Event for Delegate 
+        //Type CardsHandler matches the Delegate above
+        //UpdateCards is the variable used by Novels form
+        public event CardsHandler UpdateCards;
+
+        // counts number of closes
+        private int CloseCount = 0;
+
+        // numbers used to determine location of added buttons
         private int numXLabel = 315;
         private int numYLabel = 79;
         private int numXTB = 438;
         private int numYTB = 79;
         private int addCount = 0;
-
-        private int CloseCount = 0;
-
-        public string charName = "";
-
-        public Dictionary<int, Form> novels;
-
-        public delegate void NovelsHandler(object sender, UpdateNovelsEventsArgs e);
-        public int charNum;
-
-        //Event for Delegate 
-        //Type NovelsHandler matches the Delegate above
-        //UpdateNovels is the variable used by Homepage form
-        public event NovelsHandler UpdateNovels;
 
         public Character()
         {
@@ -52,6 +53,7 @@ namespace Texttomeh2
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             */
+
         }
 
 
@@ -118,23 +120,23 @@ namespace Texttomeh2
         {
             if (CloseCount == 0)
             {
-                UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
-                novels.Add(charNum, this);
+                MessageBox.Show(cardNum.ToString());
+                UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
+                cards.Add(cardNum, this);
                 //Event declared above
-                UpdateNovels(this, args);
+                CloseCount += 1;
+                UpdateCards(this, args);
             }
-            CloseCount += 1;
             this.Visible = false;
 
         }
 
 
+        
+
         private void button4_Click(object sender, EventArgs e)
         {
-            
             this.Close();
-
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

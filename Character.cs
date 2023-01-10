@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Texttomeh2.Events;
-
 namespace Texttomeh2
 {
     public partial class Character : Form  // character form
@@ -43,18 +42,15 @@ namespace Texttomeh2
 
         private void Form2_Load(object sender, EventArgs e)
         {
-           // this.SetControls();
+           this.SetControls();
         }
 
         private void SetControls()
         {
             // makes form uneditable to user
-            
-            /* som reason isn't working correctly
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            */
-
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
 
@@ -119,16 +115,34 @@ namespace Texttomeh2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (CloseCount == 0)
-            {
+            Boolean nameExists = false;
 
-                UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
-                cards.Add(cardNum, this);
-                //Event declared above
-                CloseCount += 1;
-                UpdateCards(this, args);
+            for (int key = 0; key < cards.Count(); key ++)
+            {
+                Form f = cards[key];
+                if (this.Name == f.Name)
+                {
+                    nameExists = true;
+                }
+                // do what you wish with key and value here
             }
-            this.Visible = false;
+            if (nameExists)
+            {
+                MessageBox.Show("This name already exists! You must change the name.");
+            }
+            else
+            {
+                if (CloseCount == 0)
+                {
+
+                    UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
+                    cards.Add(cardNum, this);
+                    //Event declared above
+                    CloseCount += 1;
+                    UpdateCards(this, args);
+                }
+                this.Visible = false;
+            }
 
         }
 

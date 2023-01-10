@@ -40,7 +40,7 @@ namespace Texttomeh2
             // 
             this.addNewCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.addNewCard.Location = new System.Drawing.Point(841, 8);
-            this.addNewCard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addNewCard.Margin = new System.Windows.Forms.Padding(2);
             this.addNewCard.Name = "addNewCard";
             this.addNewCard.Size = new System.Drawing.Size(111, 36);
             this.addNewCard.TabIndex = 0;
@@ -51,8 +51,8 @@ namespace Texttomeh2
             // save
             // 
             this.save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.save.Location = new System.Drawing.Point(841, 520);
-            this.save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.save.Location = new System.Drawing.Point(877, 628);
+            this.save.Margin = new System.Windows.Forms.Padding(2);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(111, 36);
             this.save.TabIndex = 1;
@@ -63,8 +63,8 @@ namespace Texttomeh2
             // delete
             // 
             this.delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.delete.Location = new System.Drawing.Point(725, 520);
-            this.delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.delete.Location = new System.Drawing.Point(761, 628);
+            this.delete.Margin = new System.Windows.Forms.Padding(2);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(111, 36);
             this.delete.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace Texttomeh2
             // 
             this.novelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.novelName.Location = new System.Drawing.Point(12, 6);
-            this.novelName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.novelName.Margin = new System.Windows.Forms.Padding(2);
             this.novelName.Name = "novelName";
             this.novelName.Size = new System.Drawing.Size(397, 26);
             this.novelName.TabIndex = 3;
@@ -86,8 +86,8 @@ namespace Texttomeh2
             // genre
             // 
             this.genre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.genre.Location = new System.Drawing.Point(434, 16);
-            this.genre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.genre.Location = new System.Drawing.Point(433, 9);
+            this.genre.Margin = new System.Windows.Forms.Padding(2);
             this.genre.Name = "genre";
             this.genre.Size = new System.Drawing.Size(269, 23);
             this.genre.TabIndex = 4;
@@ -97,7 +97,7 @@ namespace Texttomeh2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 564);
+            this.ClientSize = new System.Drawing.Size(1000, 675);
             this.Controls.Add(this.genre);
             this.Controls.Add(this.novelName);
             this.Controls.Add(this.delete);

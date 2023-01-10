@@ -47,7 +47,15 @@ namespace Texttomeh2
 
         private void Novels_Load(object sender, EventArgs e)
         {
-            
+            this.SetControls();
+        }
+
+        private void SetControls()
+        {
+            // makes form uneditable to user
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void novelName_TextChanged(object sender, EventArgs e)
@@ -91,6 +99,12 @@ namespace Texttomeh2
             addedButtons.Add(cardButton.Text, cardNum - 1);
             novelLocX += 134 + 6;
 
+            if(novelLocX >= 854)
+            {
+                novelLocX = 12;
+                novelLocY += 190;
+            }
+
         }
 
         private void cardsDelete(Form s, UpdateCardsEventsArgs e)
@@ -125,16 +139,34 @@ namespace Texttomeh2
         // saving
         private void save_Click(object sender, EventArgs e)
         {
-            if (CloseCount == 0)
+            Boolean nameExists = false;
+
+            for (int key = 0; key < cards.Count(); key ++)
             {
-                UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
-                novels.Add(novelNum, this);
-                //Event declared above
-                UpdateNovels(this, args);
-                CloseCount += 1;
+                Form f = cards[key];
+                if (this.Name == f.Name)
+                {
+                    nameExists = true;
+                }
+                // do what you wish with key and value here
             }
-            
-            this.Visible = false;
+            if (nameExists)
+            {
+                MessageBox.Show("This name already exists! You must change the name.");
+            }
+            else
+            {
+                if (CloseCount == 0)
+                {
+
+                    UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
+                    novels.Add(novelNum, this);
+                    //Event declared above
+                    UpdateNovels(this, args);
+                    CloseCount += 1;
+                }
+                this.Visible = false;
+            }
         }
 
         //deletes form

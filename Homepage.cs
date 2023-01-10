@@ -89,6 +89,11 @@ namespace Texttomeh2
             // location changes
             novelNum += 1;
             novelLocX += 134 + 6;
+            if (novelLocX >= 852)
+            {
+                novelLocX = 12;
+                novelLocY += 190;
+            }
 
         }
 

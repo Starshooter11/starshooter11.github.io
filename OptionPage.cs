@@ -32,7 +32,16 @@ namespace Texttomeh2
         {
             InitializeComponent();
             this.Visible = true;
+            this.SetControls();
         }
+        private void SetControls()
+        {
+            // makes form uneditable to user
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
+
 
         //character form button
         private void charButton_Click(object sender, EventArgs e)

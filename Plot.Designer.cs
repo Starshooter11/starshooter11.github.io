@@ -259,6 +259,7 @@ namespace Texttomeh2
             this.addBox.TabIndex = 38;
             this.addBox.Text = "Add Box";
             this.addBox.UseVisualStyleBackColor = true;
+            this.addBox.Click += new System.EventHandler(this.addBox_Click);
             // 
             // pictureBox6
             // 

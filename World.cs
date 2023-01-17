@@ -68,6 +68,7 @@ namespace Texttomeh2
                 }
                 // do what you wish with key and value here
             }
+
             if (nameExists)
             {
                 MessageBox.Show("This name already exists! You must change the name.");
@@ -85,6 +86,11 @@ namespace Texttomeh2
                 }
                 this.Visible = false;
             }
+        }
+
+        private void worldName_TextChanged(object sender, EventArgs e)
+        {
+            this.Name = worldName.Text;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -130,9 +136,5 @@ namespace Texttomeh2
             }
         }
 
-        private void worldName_TextChanged(object sender, EventArgs e)
-        {
-            this.Name = worldName.Text;
-        }
     }
 }

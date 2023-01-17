@@ -106,27 +106,6 @@ namespace Texttomeh2
             }
 
         }
-
-        private void cardsDelete(Form s, UpdateCardsEventsArgs e)
-        {
-            cards = e.GetCards;
-            String cardName = s.Name;
-            cards[addedButtons[cardName]].Close();
-            cards.Remove(addedButtons[cardName]);
-            addedButtons.Remove(cardName);
-
-            foreach (Control c in this.Controls)
-            {
-                Button b = c as Button;
-                if (b != null)
-                {
-                    if (b.Name == cardName)
-                    {
-                        b.Hide();
-                    }
-                }
-            }
-        }
         
         // new button click event utilizing inherited pointers
         private void cardButton_Click(object sender, EventArgs e)
@@ -175,6 +154,26 @@ namespace Texttomeh2
             UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(cards);
             DeleteNovels(this, args);
             this.Close();
+        }
+        private void cardsDelete(Form s, UpdateCardsEventsArgs e)
+        {
+            cards = e.GetCards;
+            String cardName = s.Name;
+            cards[addedButtons[cardName]].Close();
+            cards.Remove(addedButtons[cardName]);
+            addedButtons.Remove(cardName);
+
+            foreach (Control c in this.Controls)
+            {
+                Button b = c as Button;
+                if (b != null)
+                {
+                    if (b.Name == cardName)
+                    {
+                        b.Hide();
+                    }
+                }
+            }
         }
     }
 }

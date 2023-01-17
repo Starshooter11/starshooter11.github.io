@@ -109,7 +109,6 @@ namespace Texttomeh2
                 numYLabel += 20 + 6;
                 addCount += 1;
             }
-
         }
 
 
@@ -146,23 +145,16 @@ namespace Texttomeh2
 
         }
 
-
-        
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            this.Name = nameBox.Text;
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {
             UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
             DeleteCards(this, args);
             this.Close();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            this.Name = nameBox.Text;
-        }
+        }       
     }
-
-
-
-
 }

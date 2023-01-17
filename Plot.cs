@@ -84,14 +84,6 @@ namespace Texttomeh2
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
-            DeleteCards(this, args);
-            this.Close();
-        }
-
-
         private void eventName_TextChanged(object sender, EventArgs e)
         {
             this.Name = eventName.Text;
@@ -133,6 +125,11 @@ namespace Texttomeh2
             }
 
         }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
+            DeleteCards(this, args);
+            this.Close();
+        }
     }
-
 }

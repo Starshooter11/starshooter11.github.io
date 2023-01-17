@@ -21,9 +21,6 @@ namespace Texttomeh2
         // novel count used as an inherited key
         private int novelNum;
 
-        // pointer used as a dictionary key
-        private int pointer = 0;
-
         // numbers used to determine added buttons locations
         private int novelLocX = 12;
         private int novelLocY = 60;
@@ -70,13 +67,11 @@ namespace Texttomeh2
         private void novelsUpdate(Form s, UpdateNovelsEventsArgs e)
         {
             novels = e.GetNovels;
-
             /*math for buttons
              * start at 12, 60
              * size 134, 180
              * split width still 6
              */
-
             //new button
             Button novelButton = new Button();
             novelButton.Location = new Point(novelLocX, novelLocY);
@@ -97,7 +92,7 @@ namespace Texttomeh2
 
         }
 
-        // new button event utilizing pointers
+        // new button event
         private void novelButton_Click(object sender, EventArgs e)
         {
             String splicing = sender.ToString().Split(':')[1].Substring(1);
@@ -106,6 +101,7 @@ namespace Texttomeh2
                 
         }
 
+        // deletes a button 
         private void novelsDelete(Form s, UpdateNovelsEventsArgs e)
         {
             novels = e.GetNovels;

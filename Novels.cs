@@ -37,6 +37,7 @@ namespace Texttomeh2
         public event NovelsHandler UpdateNovels;
         public event NovelsHandler DeleteNovels;
 
+
         //start
         public Novels()
         {
@@ -61,6 +62,7 @@ namespace Texttomeh2
         private void novelName_TextChanged(object sender, EventArgs e)
         {
             this.Name = novelName.Text;
+            
         }
 
         // adds cards
@@ -118,34 +120,33 @@ namespace Texttomeh2
         // saving
         private void save_Click(object sender, EventArgs e)
         {
-            Boolean nameExists = false;
+            if (CloseCount == 0)
+            {    Boolean nameExists = false;
 
-            for (int key = 0; key < cards.Count(); key ++)
-            {
-                Form f = cards[key];
-                if (this.Name == f.Name)
+                for (int key = 0; key < novels.Count(); key++)
                 {
-                    nameExists = true;
+                    Form f = novels[key];
+                    if (this.Name == f.Name)
+                    {
+                       nameExists = true;
+                    }
+
+                    // do what you wish with key and value here
                 }
-                // do what you wish with key and value here
-            }
-            if (nameExists)
-            {
-                MessageBox.Show("This name already exists! You must change the name.");
-            }
-            else
-            {
-                if (CloseCount == 0)
+                if (nameExists)
                 {
-
+                    MessageBox.Show("Something went wrong, please change the novel's name and try again!");
+                }
+                else
+                {
                     UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(novels);
                     novels.Add(novelNum, this);
                     //Event declared above
                     UpdateNovels(this, args);
                     CloseCount += 1;
-                }
-                this.Visible = false;
+                }            
             }
+            this.Visible = false;
         }
 
         //deletes form

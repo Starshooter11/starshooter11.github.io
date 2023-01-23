@@ -12,7 +12,7 @@ using Texttomeh2.Events;
 namespace Texttomeh2
 {
     // novel page where user can view contents of a novel
-    public partial class Novels : Form
+    public partial class Novel : Form
     {
         //numbers used to determine buttons placement
         private int novelLocX = 12;
@@ -38,7 +38,7 @@ namespace Texttomeh2
         public event NovelsHandler DeleteNovels;
 
         //start
-        public Novels()
+        public Novel()
         {
             InitializeComponent();
             this.Visible = true;

@@ -1,7 +1,7 @@
 ﻿
 namespace Texttomeh2
 {
-    partial class Novels
+    partial class Novel
     {
         /// <summary>
         /// Required designer variable.

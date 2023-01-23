@@ -52,12 +52,12 @@ namespace Texttomeh2
         private void button1_Click(object sender, EventArgs e)
         {
             // opens novel UI
-            Novels novel = new Novels();
+            Novel novel = new Novel();
             novel.novels = this.novels;
 
             //sets up the communication-between-forms event handler
-            novel.UpdateNovels += new Novels.NovelsHandler(novelsUpdate);
-            novel.DeleteNovels += new Novels.NovelsHandler(novelsDelete);
+            novel.UpdateNovels += new Novel.NovelsHandler(novelsUpdate);
+            novel.DeleteNovels += new Novel.NovelsHandler(novelsDelete);
 
             // inherited pointer
             novel.novelNum = this.novelNum;

@@ -48,11 +48,11 @@
   <ItemGroup>
     <Compile Include="Events\UpdateCards.cs" />
     <Compile Include="Events\UpdateNovels.cs" />
-    <Compile Include="Novels.cs">
+    <Compile Include="Novel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Novels.Designer.cs">
-      <DependentUpon>Novels.cs</DependentUpon>
+    <Compile Include="Novel.Designer.cs">
+      <DependentUpon>Novel.cs</DependentUpon>
     </Compile>
     <Compile Include="World.cs">
       <SubType>Form</SubType>
@@ -86,8 +86,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Novels.resx">
-      <DependentUpon>Novels.cs</DependentUpon>
+    <EmbeddedResource Include="Novel.resx">
+      <DependentUpon>Novel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="World.resx">
       <DependentUpon>World.cs</DependentUpon>

@@ -96,7 +96,6 @@ namespace Texttomeh2
         private void novelButton_Click(object sender, EventArgs e)
         {
             String splicing = sender.ToString().Split(':')[1].Substring(1);
-            MessageBox.Show(addedButtons[splicing].ToString());
             novels[addedButtons[splicing]].Visible = true;
                 
         }

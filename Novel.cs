@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Texttomeh2.Events;
+using Texttomeh2.Models;
 
 namespace Texttomeh2
 {
@@ -36,6 +37,9 @@ namespace Texttomeh2
         //UpdateNovels is the variable used by Homepage form
         public event NovelsHandler UpdateNovels;
         public event NovelsHandler DeleteNovels;
+
+        //for exporting purposes
+        private string txtLocation = "";
 
         //start
         public Novel()
@@ -173,6 +177,22 @@ namespace Texttomeh2
                         b.Hide();
                     }
                 }
+            }
+        }
+
+        private void exportAll_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.SelectedPath = CurrentPath.GetDbasePath();
+
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.txtLocation = folderBrowserDialog1.SelectedPath;
+            }
+
+            string file = this.txtLocation.Trim() + "\\" + this.Name.Trim();
+            foreach (KeyValuePair<int, Form> entry in cards)
+            {
+                ExportTXT.WriteTXT(entry.Value, file + entry.Value.Name + ".txt");
             }
         }
     }

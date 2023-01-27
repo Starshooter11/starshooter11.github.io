@@ -30,22 +30,22 @@ namespace Texttomeh2
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.basedOn = new System.Windows.Forms.Label();
+            this.alignment = new System.Windows.Forms.Label();
+            this.orientation = new System.Windows.Forms.Label();
+            this.height = new System.Windows.Forms.Label();
+            this.gender = new System.Windows.Forms.Label();
+            this.region = new System.Windows.Forms.Label();
+            this.dob = new System.Windows.Forms.Label();
+            this.name2 = new System.Windows.Forms.Label();
+            this.gendertxt = new System.Windows.Forms.TextBox();
+            this.heighttxt = new System.Windows.Forms.TextBox();
+            this.orientationtxt = new System.Windows.Forms.TextBox();
+            this.alignmenttxt = new System.Windows.Forms.TextBox();
+            this.basedOntxt = new System.Windows.Forms.TextBox();
+            this.dobtxt = new System.Windows.Forms.TextBox();
+            this.regiontxt = new System.Windows.Forms.TextBox();
+            this.name2txt = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.nameBox = new System.Windows.Forms.TextBox();
@@ -53,12 +53,12 @@ namespace Texttomeh2
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.bio1 = new System.Windows.Forms.Label();
+            this.bio2 = new System.Windows.Forms.Label();
+            this.bio3 = new System.Windows.Forms.Label();
+            this.bio1txt = new System.Windows.Forms.TextBox();
+            this.bio2txt = new System.Windows.Forms.TextBox();
+            this.bio3txt = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.delButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,150 +78,150 @@ namespace Texttomeh2
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // label8
+            // basedOn
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.Location = new System.Drawing.Point(12, 276);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 20);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Based On";
+            this.basedOn.AutoSize = true;
+            this.basedOn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.basedOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.basedOn.Location = new System.Drawing.Point(12, 276);
+            this.basedOn.Name = "basedOn";
+            this.basedOn.Size = new System.Drawing.Size(80, 20);
+            this.basedOn.TabIndex = 34;
+            this.basedOn.Text = "Based On";
             // 
-            // label7
+            // alignment
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(12, 250);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 20);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Alignment";
+            this.alignment.AutoSize = true;
+            this.alignment.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.alignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.alignment.Location = new System.Drawing.Point(12, 250);
+            this.alignment.Name = "alignment";
+            this.alignment.Size = new System.Drawing.Size(80, 20);
+            this.alignment.TabIndex = 33;
+            this.alignment.Text = "Alignment";
             // 
-            // label6
+            // orientation
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(12, 224);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 20);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Orientation";
+            this.orientation.AutoSize = true;
+            this.orientation.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.orientation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.orientation.Location = new System.Drawing.Point(12, 224);
+            this.orientation.Name = "orientation";
+            this.orientation.Size = new System.Drawing.Size(87, 20);
+            this.orientation.TabIndex = 32;
+            this.orientation.Text = "Orientation";
             // 
-            // label5
+            // height
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(12, 198);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 20);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Height";
+            this.height.AutoSize = true;
+            this.height.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.height.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.height.Location = new System.Drawing.Point(12, 198);
+            this.height.Name = "height";
+            this.height.Size = new System.Drawing.Size(56, 20);
+            this.height.TabIndex = 31;
+            this.height.Text = "Height";
             // 
-            // label4
+            // gender
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(12, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 20);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Gender";
+            this.gender.AutoSize = true;
+            this.gender.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.gender.Location = new System.Drawing.Point(12, 172);
+            this.gender.Name = "gender";
+            this.gender.Size = new System.Drawing.Size(63, 20);
+            this.gender.TabIndex = 30;
+            this.gender.Text = "Gender";
             // 
-            // label3
+            // region
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(12, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 20);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Region";
+            this.region.AutoSize = true;
+            this.region.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.region.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.region.Location = new System.Drawing.Point(12, 146);
+            this.region.Name = "region";
+            this.region.Size = new System.Drawing.Size(60, 20);
+            this.region.TabIndex = 29;
+            this.region.Text = "Region";
             // 
-            // label2
+            // dob
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(12, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 20);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "DoB";
+            this.dob.AutoSize = true;
+            this.dob.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dob.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dob.Location = new System.Drawing.Point(12, 99);
+            this.dob.Name = "dob";
+            this.dob.Size = new System.Drawing.Size(41, 20);
+            this.dob.TabIndex = 28;
+            this.dob.Text = "DoB";
             // 
-            // label1
+            // name2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(12, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Name Indepth";
+            this.name2.AutoSize = true;
+            this.name2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.name2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.name2.Location = new System.Drawing.Point(12, 79);
+            this.name2.Name = "name2";
+            this.name2.Size = new System.Drawing.Size(110, 20);
+            this.name2.TabIndex = 27;
+            this.name2.Text = "Name Indepth";
             // 
-            // textBox9
+            // gendertxt
             // 
-            this.textBox9.Location = new System.Drawing.Point(128, 172);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(128, 20);
-            this.textBox9.TabIndex = 26;
+            this.gendertxt.Location = new System.Drawing.Point(128, 172);
+            this.gendertxt.Name = "gendertxt";
+            this.gendertxt.Size = new System.Drawing.Size(128, 20);
+            this.gendertxt.TabIndex = 26;
             // 
-            // textBox8
+            // heighttxt
             // 
-            this.textBox8.Location = new System.Drawing.Point(128, 198);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(128, 20);
-            this.textBox8.TabIndex = 25;
+            this.heighttxt.Location = new System.Drawing.Point(128, 198);
+            this.heighttxt.Name = "heighttxt";
+            this.heighttxt.Size = new System.Drawing.Size(128, 20);
+            this.heighttxt.TabIndex = 25;
             // 
-            // textBox7
+            // orientationtxt
             // 
-            this.textBox7.Location = new System.Drawing.Point(128, 224);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(128, 20);
-            this.textBox7.TabIndex = 24;
+            this.orientationtxt.Location = new System.Drawing.Point(128, 224);
+            this.orientationtxt.Name = "orientationtxt";
+            this.orientationtxt.Size = new System.Drawing.Size(128, 20);
+            this.orientationtxt.TabIndex = 24;
             // 
-            // textBox6
+            // alignmenttxt
             // 
-            this.textBox6.Location = new System.Drawing.Point(128, 250);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(128, 20);
-            this.textBox6.TabIndex = 23;
+            this.alignmenttxt.Location = new System.Drawing.Point(128, 250);
+            this.alignmenttxt.Name = "alignmenttxt";
+            this.alignmenttxt.Size = new System.Drawing.Size(128, 20);
+            this.alignmenttxt.TabIndex = 23;
             // 
-            // textBox5
+            // basedOntxt
             // 
-            this.textBox5.Location = new System.Drawing.Point(128, 276);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(128, 20);
-            this.textBox5.TabIndex = 22;
+            this.basedOntxt.Location = new System.Drawing.Point(128, 276);
+            this.basedOntxt.Name = "basedOntxt";
+            this.basedOntxt.Size = new System.Drawing.Size(128, 20);
+            this.basedOntxt.TabIndex = 22;
             // 
-            // textBox4
+            // dobtxt
             // 
-            this.textBox4.Location = new System.Drawing.Point(128, 105);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(128, 20);
-            this.textBox4.TabIndex = 21;
+            this.dobtxt.Location = new System.Drawing.Point(128, 105);
+            this.dobtxt.Name = "dobtxt";
+            this.dobtxt.Size = new System.Drawing.Size(128, 20);
+            this.dobtxt.TabIndex = 21;
             // 
-            // textBox3
+            // regiontxt
             // 
-            this.textBox3.Location = new System.Drawing.Point(128, 146);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(128, 20);
-            this.textBox3.TabIndex = 20;
+            this.regiontxt.Location = new System.Drawing.Point(128, 146);
+            this.regiontxt.Name = "regiontxt";
+            this.regiontxt.Size = new System.Drawing.Size(128, 20);
+            this.regiontxt.TabIndex = 20;
             // 
-            // textBox2
+            // name2txt
             // 
-            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox2.Location = new System.Drawing.Point(128, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 20);
-            this.textBox2.TabIndex = 19;
+            this.name2txt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.name2txt.Location = new System.Drawing.Point(128, 79);
+            this.name2txt.Name = "name2txt";
+            this.name2txt.Size = new System.Drawing.Size(128, 20);
+            this.name2txt.TabIndex = 19;
             // 
             // pictureBox2
             // 
@@ -289,59 +289,59 @@ namespace Texttomeh2
             this.pictureBox5.TabIndex = 43;
             this.pictureBox5.TabStop = false;
             // 
-            // label9
+            // bio1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(12, 325);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 17);
-            this.label9.TabIndex = 44;
-            this.label9.Text = "Bio 1";
+            this.bio1.AutoSize = true;
+            this.bio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.bio1.Location = new System.Drawing.Point(12, 325);
+            this.bio1.Name = "bio1";
+            this.bio1.Size = new System.Drawing.Size(40, 17);
+            this.bio1.TabIndex = 44;
+            this.bio1.Text = "Bio 1";
             // 
-            // label10
+            // bio2
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(12, 490);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 17);
-            this.label10.TabIndex = 45;
-            this.label10.Text = "Bio 2";
+            this.bio2.AutoSize = true;
+            this.bio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.bio2.Location = new System.Drawing.Point(12, 490);
+            this.bio2.Name = "bio2";
+            this.bio2.Size = new System.Drawing.Size(40, 17);
+            this.bio2.TabIndex = 45;
+            this.bio2.Text = "Bio 2";
             // 
-            // label11
+            // bio3
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label11.Location = new System.Drawing.Point(12, 655);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 17);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "Bio 3";
+            this.bio3.AutoSize = true;
+            this.bio3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.bio3.Location = new System.Drawing.Point(12, 655);
+            this.bio3.Name = "bio3";
+            this.bio3.Size = new System.Drawing.Size(40, 17);
+            this.bio3.TabIndex = 46;
+            this.bio3.Text = "Bio 3";
             // 
-            // textBox10
+            // bio1txt
             // 
-            this.textBox10.Location = new System.Drawing.Point(12, 344);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(588, 120);
-            this.textBox10.TabIndex = 47;
+            this.bio1txt.Location = new System.Drawing.Point(12, 344);
+            this.bio1txt.Multiline = true;
+            this.bio1txt.Name = "bio1txt";
+            this.bio1txt.Size = new System.Drawing.Size(588, 120);
+            this.bio1txt.TabIndex = 47;
             // 
-            // textBox11
+            // bio2txt
             // 
-            this.textBox11.Location = new System.Drawing.Point(12, 510);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(588, 120);
-            this.textBox11.TabIndex = 48;
+            this.bio2txt.Location = new System.Drawing.Point(12, 510);
+            this.bio2txt.Multiline = true;
+            this.bio2txt.Name = "bio2txt";
+            this.bio2txt.Size = new System.Drawing.Size(588, 120);
+            this.bio2txt.TabIndex = 48;
             // 
-            // textBox12
+            // bio3txt
             // 
-            this.textBox12.Location = new System.Drawing.Point(12, 675);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(588, 120);
-            this.textBox12.TabIndex = 49;
+            this.bio3txt.Location = new System.Drawing.Point(12, 675);
+            this.bio3txt.Multiline = true;
+            this.bio3txt.Name = "bio3txt";
+            this.bio3txt.Size = new System.Drawing.Size(588, 120);
+            this.bio3txt.TabIndex = 49;
             // 
             // saveButton
             // 
@@ -370,12 +370,12 @@ namespace Texttomeh2
             this.ClientSize = new System.Drawing.Size(617, 833);
             this.Controls.Add(this.delButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.bio3txt);
+            this.Controls.Add(this.bio2txt);
+            this.Controls.Add(this.bio1txt);
+            this.Controls.Add(this.bio3);
+            this.Controls.Add(this.bio2);
+            this.Controls.Add(this.bio1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox6);
@@ -383,22 +383,22 @@ namespace Texttomeh2
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.basedOn);
+            this.Controls.Add(this.alignment);
+            this.Controls.Add(this.orientation);
+            this.Controls.Add(this.height);
+            this.Controls.Add(this.gender);
+            this.Controls.Add(this.region);
+            this.Controls.Add(this.dob);
+            this.Controls.Add(this.name2);
+            this.Controls.Add(this.gendertxt);
+            this.Controls.Add(this.heighttxt);
+            this.Controls.Add(this.orientationtxt);
+            this.Controls.Add(this.alignmenttxt);
+            this.Controls.Add(this.basedOntxt);
+            this.Controls.Add(this.dobtxt);
+            this.Controls.Add(this.regiontxt);
+            this.Controls.Add(this.name2txt);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Character";
             this.Text = "Character";
@@ -419,22 +419,22 @@ namespace Texttomeh2
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label basedOn;
+        private System.Windows.Forms.Label alignment;
+        private System.Windows.Forms.Label orientation;
+        private System.Windows.Forms.Label height;
+        private System.Windows.Forms.Label gender;
+        private System.Windows.Forms.Label region;
+        private System.Windows.Forms.Label dob;
+        private System.Windows.Forms.Label name2;
+        private System.Windows.Forms.TextBox gendertxt;
+        private System.Windows.Forms.TextBox heighttxt;
+        private System.Windows.Forms.TextBox orientationtxt;
+        private System.Windows.Forms.TextBox alignmenttxt;
+        private System.Windows.Forms.TextBox basedOntxt;
+        private System.Windows.Forms.TextBox dobtxt;
+        private System.Windows.Forms.TextBox regiontxt;
+        private System.Windows.Forms.TextBox name2txt;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox nameBox;
@@ -442,12 +442,12 @@ namespace Texttomeh2
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label bio1;
+        private System.Windows.Forms.Label bio2;
+        private System.Windows.Forms.Label bio3;
+        private System.Windows.Forms.TextBox bio1txt;
+        private System.Windows.Forms.TextBox bio2txt;
+        private System.Windows.Forms.TextBox bio3txt;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button delButton;
     }

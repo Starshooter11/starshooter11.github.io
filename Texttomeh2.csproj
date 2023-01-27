@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\ExportTXT.cs" />
     <Compile Include="Events\UpdateCards.cs" />
     <Compile Include="Events\UpdateNovels.cs" />
+    <Compile Include="Models\CurrentPath.cs" />
     <Compile Include="Novel.cs">
       <SubType>Form</SubType>
     </Compile>

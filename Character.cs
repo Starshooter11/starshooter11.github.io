@@ -145,6 +145,7 @@ namespace Texttomeh2
 
         }
 
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             this.Name = nameBox.Text;
@@ -155,6 +156,6 @@ namespace Texttomeh2
             UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
             DeleteCards(this, args);
             this.Close();
-        }       
+        }
     }
 }

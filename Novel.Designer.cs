@@ -34,12 +34,14 @@ namespace Texttomeh2
             this.delete = new System.Windows.Forms.Button();
             this.novelName = new System.Windows.Forms.TextBox();
             this.genre = new System.Windows.Forms.TextBox();
+            this.exportAll = new System.Windows.Forms.Button();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // addNewCard
             // 
             this.addNewCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.addNewCard.Location = new System.Drawing.Point(841, 8);
+            this.addNewCard.Location = new System.Drawing.Point(878, 6);
             this.addNewCard.Margin = new System.Windows.Forms.Padding(2);
             this.addNewCard.Name = "addNewCard";
             this.addNewCard.Size = new System.Drawing.Size(111, 36);
@@ -93,17 +95,30 @@ namespace Texttomeh2
             this.genre.TabIndex = 4;
             this.genre.Text = "Genre";
             // 
-            // Novels
+            // exportAll
+            // 
+            this.exportAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.exportAll.Location = new System.Drawing.Point(646, 628);
+            this.exportAll.Margin = new System.Windows.Forms.Padding(2);
+            this.exportAll.Name = "exportAll";
+            this.exportAll.Size = new System.Drawing.Size(111, 36);
+            this.exportAll.TabIndex = 5;
+            this.exportAll.Text = "Export All";
+            this.exportAll.UseVisualStyleBackColor = true;
+            this.exportAll.Click += new System.EventHandler(this.exportAll_Click);
+            // 
+            // Novel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 675);
+            this.Controls.Add(this.exportAll);
             this.Controls.Add(this.genre);
             this.Controls.Add(this.novelName);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.save);
             this.Controls.Add(this.addNewCard);
-            this.Name = "Novels";
+            this.Name = "Novel";
             this.Text = "Novels";
             this.Load += new System.EventHandler(this.Novels_Load);
             this.ResumeLayout(false);
@@ -118,5 +133,7 @@ namespace Texttomeh2
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.TextBox novelName;
         private System.Windows.Forms.TextBox genre;
+        private System.Windows.Forms.Button exportAll;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }

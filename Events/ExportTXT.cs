@@ -11,28 +11,33 @@ namespace Texttomeh2.Events
 {
     public class ExportTXT
     {
-        public static void WriteTXT(Form a, string d)
+        public static void WriteTXT(Form form, string file)
         {
 
             List<String> lines = new List<String>();
-            lines.Add("Name: " + a.Name);
+            lines.Add("Name: " + form.Name);
 
-            Control[] controlArray = new Control[a.Controls.Count];
+            Control[] controlArray = new Control[form.Controls.Count];
 
-            a.Controls.CopyTo(controlArray, 0);
-
-            foreach (Control b in controlArray)
-            {
-                foreach (Control c in controlArray)
-                {
-                    if( (c.Name.Contains(b.Name)) && (c != b) && !(c.Name.Contains("progCre")))
-                    {
-                        lines.Add(b.Text + ": " + c.Text);
-                    }
-                }
-            }
+            form.Controls.CopyTo(controlArray, 0);
             
-            for (int n = 0; n < controlArray.Length-1; n++)
+
+            int length = controlArray.Length;
+            
+            for(int a = length-1 ; a > -1 ; a--)
+            {
+                  for(int b = length-1; b> -1; b--)
+                  {
+                      if((controlArray[a].Name.Contains(controlArray[b].Name)) && (controlArray[a] != controlArray[b]) && !(controlArray[a].Name.Contains("progCre")))
+                      {
+                          lines.Add(controlArray[b].Text + ": " + controlArray[a].Text);
+                      }
+                  }
+            }
+             
+            
+
+            for (int n = length-1; n > -1; n--)
             {
                 if(controlArray[n].Name.Contains("progCreLB"))
                 {
@@ -46,9 +51,18 @@ namespace Texttomeh2.Events
                 temp = temp + s + "\n";
             }
 
-            MessageBox.Show(temp);
+            DialogResult dr = MessageBox.Show(temp + "\n\n\nIs this correct?", "Please click yes to export or no to cancel", MessageBoxButtons.YesNo);
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    File.WriteAllLines(file, lines);
+                    break;
+                case DialogResult.No:
+                    MessageBox.Show("Cancelling Export of card.");
+                    break;
+            }
 
-            File.WriteAllLines(d, lines);
+            
         }
     }
 }

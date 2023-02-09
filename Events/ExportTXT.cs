@@ -58,7 +58,7 @@ namespace Texttomeh2.Events
                     File.WriteAllLines(file, lines);
                     break;
                 case DialogResult.No:
-                    MessageBox.Show("Cancelling Export of card.");
+                    MessageBox.Show("Cancelling export of card.");
                     break;
             }
 

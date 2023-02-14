@@ -351,7 +351,7 @@ namespace Texttomeh2
             this.saveButton.TabIndex = 50;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.button3_Click);
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // delButton
             // 

@@ -112,14 +112,14 @@ namespace Texttomeh2
         }
 
 
-        private void button3_Click(object sender, EventArgs e)
+        private void saveButton_Click(object sender, EventArgs e)
         {
             Boolean nameExists = false;
 
             for (int key = 0; key < cards.Count(); key ++)
             {
                 Form f = cards[key];
-                if (this.Name == f.Name)
+                if ((this.Name == f.Name) && (this != f))
                 {
                     nameExists = true;
                 }
@@ -154,7 +154,10 @@ namespace Texttomeh2
         private void button4_Click(object sender, EventArgs e)
         {
             UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
-            DeleteCards(this, args);
+            if(CloseCount >= 0)
+            {
+                DeleteCards(this, args);
+            }
             this.Close();
         }
     }

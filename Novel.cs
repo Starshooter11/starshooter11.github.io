@@ -131,7 +131,7 @@ namespace Texttomeh2
                 {
                     nameExists = true;
                 }
-                // do what you wish with key and value here
+
             }
             if (nameExists)
             {
@@ -159,6 +159,7 @@ namespace Texttomeh2
             DeleteNovels(this, args);
             this.Close();
         }
+
         private void cardsDelete(Form s, UpdateCardsEventsArgs e)
         {
             cards = e.GetCards;

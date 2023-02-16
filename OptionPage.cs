@@ -33,6 +33,7 @@ namespace Texttomeh2
             InitializeComponent();
             this.Visible = true;
             this.SetControls();
+            this.ControlBox = false;
         }
         private void SetControls()
         {

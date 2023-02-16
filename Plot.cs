@@ -46,6 +46,7 @@ namespace Texttomeh2
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.ControlBox = false;
         }
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -127,8 +128,9 @@ namespace Texttomeh2
         }
         private void button4_Click(object sender, EventArgs e)
         {
+         
             UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
-            if (CloseCount >= 0)
+            if (CloseCount > 0)
             {
                 DeleteCards(this, args);
             }

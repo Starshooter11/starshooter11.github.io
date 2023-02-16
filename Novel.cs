@@ -52,6 +52,7 @@ namespace Texttomeh2
         private void Novels_Load(object sender, EventArgs e)
         {
             this.SetControls();
+            this.ControlBox = false;
         }
 
         private void SetControls()
@@ -156,12 +157,17 @@ namespace Texttomeh2
         private void delete_Click(object sender, EventArgs e)
         {
             UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(cards);
-            DeleteNovels(this, args);
+            if(CloseCount>0)
+            {
+                DeleteNovels(this, args);
+            }
+            
             this.Close();
         }
 
         private void cardsDelete(Form s, UpdateCardsEventsArgs e)
         {
+
             cards = e.GetCards;
             String cardName = s.Name;
             cards[addedButtons[cardName]].Close();

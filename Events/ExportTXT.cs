@@ -30,7 +30,7 @@ namespace Texttomeh2.Events
                   {
                       if((controlArray[a].Name.Contains(controlArray[b].Name)) && (controlArray[a] != controlArray[b]) && !(controlArray[a].Name.Contains("progCre")))
                       {
-                          lines.Add(controlArray[b].Text + ": " + controlArray[a].Text);
+                          lines.Add(controlArray[b].Text + ": " + controlArray[a].Text +"\n");
                       }
                   }
             }
@@ -41,7 +41,7 @@ namespace Texttomeh2.Events
             {
                 if(controlArray[n].Name.Contains("progCreLB"))
                 {
-                    lines.Add(controlArray[n].Text + ": " + controlArray[n+1].Text);
+                    lines.Add(controlArray[n].Text + ": " + controlArray[n+1].Text + "\n");
                 }
             }
 

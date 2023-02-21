@@ -94,16 +94,6 @@ namespace Texttomeh2
             this.Name = worldName.Text;
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
-            if (CloseCount > 0)
-            {
-                DeleteCards(this, args);
-            }
-            this.Close();
-        }
-
         private void addTB_Click(object sender, EventArgs e)
         {
             if (addCount >= 7)
@@ -137,6 +127,27 @@ namespace Texttomeh2
                 myLB.BringToFront();
                 numYLabel += 20 + 6;
                 addCount += 1;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
+            DialogResult dr = MessageBox.Show("Are you sure you would like to delete?", "Deleting form...", MessageBoxButtons.YesNo);
+
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    if (CloseCount > 0)
+                    {
+                        DeleteCards(this, args);
+                    }
+
+                    this.Close();
+                    break;
+                case DialogResult.No:
+                    MessageBox.Show("Returning to card...");
+                    break;
             }
         }
 

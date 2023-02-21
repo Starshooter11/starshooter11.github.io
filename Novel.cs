@@ -157,12 +157,24 @@ namespace Texttomeh2
         private void delete_Click(object sender, EventArgs e)
         {
             UpdateNovelsEventsArgs args = new UpdateNovelsEventsArgs(cards);
-            if(CloseCount>0)
+
+            DialogResult dr = MessageBox.Show("Are you sure you would like to delete?", "Deleting form...", MessageBoxButtons.YesNo);
+
+            switch (dr)
             {
-                DeleteNovels(this, args);
+                case DialogResult.Yes:
+                    if (CloseCount > 0)
+                    {
+                        DeleteNovels(this, args);
+                    }
+
+                    this.Close();
+                    break;
+                case DialogResult.No:
+                    MessageBox.Show("Returning to novel...");
+                    break;
             }
-            
-            this.Close();
+
         }
 
         private void cardsDelete(Form s, UpdateCardsEventsArgs e)

@@ -130,11 +130,23 @@ namespace Texttomeh2
         {
          
             UpdateCardsEventsArgs args = new UpdateCardsEventsArgs(cards);
-            if (CloseCount > 0)
+            DialogResult dr = MessageBox.Show("Are you sure you would like to delete?", "Deleting form...", MessageBoxButtons.YesNo);
+
+            switch (dr)
             {
-                DeleteCards(this, args);
+                case DialogResult.Yes:
+                    if (CloseCount > 0)
+                    {
+                        DeleteCards(this, args);
+                    }
+
+                    this.Close();
+                    break;
+                case DialogResult.No:
+                    MessageBox.Show("Returning to card...");
+                    break;
             }
-            this.Close();
+
         }
     }
 }

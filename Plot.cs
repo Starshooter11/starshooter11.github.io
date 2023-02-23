@@ -108,7 +108,6 @@ namespace Texttomeh2
                 this.Controls.Add(myTB);
                 myTB.BringToFront();
                 numYTB += 20 + 6;
-                addCount += 1;
 
                 TextBox myLB = new TextBox();
                 myLB.Location = new Point(numXLabel, numYLabel);
